@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "C++ map容器"
+categories: C++  # 文章类别
+tags:  C++
+author: FTX
+---
+
+* content
+{:toc}
+
+这里我们介绍一下C++的map容器用法
+
+- map<int,int> mp;
+- mp.insert(a);
+
+
