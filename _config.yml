@@ -9,7 +9,7 @@
 title: FTX
 brief-intro: Front-end Dev Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://gaohaoyang.github.io" # the base hostname & protocol for your site
+url: "https://futingx.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
@@ -17,10 +17,10 @@ permalink: /:year/:month/:day/:title/
 twitter_username:
 facebook_username: futingxi
 github_username:  futingxi
-email: 3167089271@qq.com
-weibo_username: 3115521wh
-zhihu_username: gaohaoyang
-linkedIn_username: gaohaoyang
+email: 20031124f@gmail.com
+weibo_username: 四喜丸子
+zhihu_username: futingxi
+linkedIn_username: futingxi
 dribbble_username:
 
 description_footer: 本站记录我的编程之旅的沿途风景！
