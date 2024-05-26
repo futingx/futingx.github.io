@@ -17,8 +17,8 @@ type: page
 
 ## 联系我
 
-* GitHub：[Gaohaoyang](https://github.com/Gaohaoyang)
-* email：3167089271@qq.com
+* GitHub：[futingx](https://github.com/futingx)
+* email：20031124f@gmail.com
 * [Weibo](http://weibo.com/3115521wh)
 * [知乎](https://www.zhihu.com/people/gaohaoyang)
 * [Facebook](https://www.facebook.com/gaohaoyang.water)
