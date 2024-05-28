@@ -9,9 +9,27 @@ author: FTX
 * content
 {:toc}
 
-这里我们介绍一下C++的map容器用法
+##### &emsp;这里我们介绍一下 **C++** 算法竞赛中的STL常用的容器和函数用法：
 
-- map<int,int> mp;
-- mp.insert(a);
+### &emsp;一.vector容器
+
+### &emsp;二.pair容器
+
+### &emsp;三.queue容器
+
+### &emsp;四.deque容器
+
+### &emsp;五.priority_queue容器
+
+### &emsp;六.set容器
+
+### &emsp;七.map容器
+
+### &emsp;八.string容器
+
+### &emsp;九.stack容器
+
+### &emsp;十.tuple容器
+
 
 
