@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "C++ 常用容器"
+title:  "C++常用容器"
 categories: C++  # 文章类别
 tags:  C++
 author: FTX
