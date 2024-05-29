@@ -15,6 +15,9 @@ author: FTX
 我当时就去搜索了一些相关jekyll的资料来查阅这个建站框架。一查惊艳到我了，jekyll的模型框架对于一个想要搭建一个小型的web或者一个分享知识的个人blog网站真是很不错。搭建好之后对于写文章也很友好，也有利于维护。具体关于jekyll可以自行官网了解：[jekyll](https://jekyllcn.com/docs/home/)
 接下来我就简单具体介绍一下 jekyll 的用法：
 
+
+
+
   
 ### 一.准备工作
 
