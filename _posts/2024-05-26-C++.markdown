@@ -80,7 +80,34 @@ int main() {
 
 ##### &emsp;1.3 实践运用：
 
-- 
+- 题目来源：[(1211 - 数组元素的插入-东方博宜OJ (czos.cn)](https://oj.czos.cn/p/1211)
+```C++
+#include<bits/stdc++.h> // 包含标准库头文件
+using namespace std; // 使用标准命名空间
+
+int main(){
+    int n; // 定义变量n，表示数组大小
+    cin>>n; // 输入数组大小
+    vector<int> a; // 声明一个整型向量a，用于存储输入的元素
+    for(int i=0;i<n;i++) // 循环n次，读入n个元素
+    {
+        int k; // 定义变量k，表示当前输入的元素值
+        cin>>k; // 输入元素值
+        a.push_back(k); // 将元素值k插入到向量a的末尾
+    }
+    int x,y; // 定义变量x和y，表示要插入的位置和元素值
+    cin>>x>>y; // 输入要插入的位置和元素值
+    
+    a.insert(a.begin()+x-1,y); // 在位置x-1处插入元素值y
+    
+    //c++11循环语法 
+    for(auto &it:a) // 遍历向量a中的所有元素
+    {
+        cout<<it<<" "; // 输出当前元素值，并跟一个空格
+    }
+    return 0; 
+}
+```
 
 <hr/>
 
