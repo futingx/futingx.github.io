@@ -81,7 +81,7 @@ int main() {
 ##### &emsp;1.3 实践运用：
 
 - 题目来源：[(1211 - 数组元素的插入-东方博宜OJ (czos.cn)](https://oj.czos.cn/p/1211)
-```c++
+~~~c++
 #include<bits/stdc++.h> // 包含标准库头文件
 using namespace std; // 使用标准命名空间
 
@@ -107,7 +107,7 @@ int main(){
     }
     return 0; 
 }
-```
+~~~
 
 <hr/>
 
