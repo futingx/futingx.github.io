@@ -109,8 +109,8 @@ int main(){
         cin>>k; // 输入元素值
         a.push_back(k); // 将元素值k插入到向量a的末尾
     }
-    int x,y; // 定义变量x和y，表示要插入的位置和元素值
-    cin>>x>>y; // 输入要插入的位置和元素值
+    int x,y; 
+    cin>>x>>y;
     
     a.insert(a.begin()+x-1,y); // 在位置x-1处插入元素值y
     
@@ -128,64 +128,223 @@ int main(){
 ### &emsp;<span id="jump2">二.pair容器</span>
 
 ##### &emsp;1.1 介绍：
-
+- 引入头文件`#include<utility>`
 - pair 是一个简单的将两个数据组合成一个单元的数据结构。它常用于需要同时存储两个相关数据的情况，例如键值对或坐标等。
 
 ##### &emsp;1.2 容器包含的函数(介绍常用的一些，其余的可以去百度)：
-
-- 
+| 函数       | 作用    |
+|----------| ------   |
+| a.first  | 返回存储的第一个元素的引用|
+| a.second | 返回存储的第二个元素的引用|
 
 ##### &emsp;1.3 实践运用：
+题目:输入五个学生的姓名和分数
+```c++
+#include <iostream>
+#include <utility>
+#include <vector>
+using namespace std;
 
--
+int main() {
+    // 提示用户输入5个姓名和分数
+    vector<pair<string, double>> students;
+    for (int i = 0; i < 5; ++i) {
+        cout << "Enter name " << i + 1 << ": ";
+        string name;
+        cin >> name;
+
+        cout << "Enter score " << i + 1 << ": ";
+        double score;
+        cin >> score;
+
+        // 创建并初始化一个 pair 对象，并将其添加到 vector 中
+        students.push_back(make_pair(name, score));
+    }
+
+    // 输出 vector 中所有 pair 对象的元素
+    cout << "Students:\n";
+    for (const auto& student : students) {
+        cout << "Name: " << student.first << " - Score: " << student.second << endl;
+    }
+
+    return 0;
+}
+```
+
 <hr/>
 
 ### &emsp;<span id="jump3">三.queue容器</span>
 
 ##### &emsp;1.1 介绍：
-
+- 引入头文件`#include<queue>`
 - queue 是一个先进先出（FIFO）的数据结构，它模拟了排队的行为。元素从队列的一端进入（称为后端），并从另一端离开（称为前端）。
 
 ##### &emsp;1.2 容器包含的函数(介绍常用的一些，其余的可以去百度)：
-
-- 
-
+| 函数                  | 作用                  |
+|---------------------|---------------------|
+| a.front()           | 返回队列中第一个元素，但不删除该元素  |
+| a.back()            | 返回队列中最后一个元素的,但不删除该元素 |
+| a.push(x)           | 将元素 x 添加到队列的末尾      |
+| a.pop()             | 删除队列中的第一个元素，但不返回其值      |
+| a.size()            | 返回队列中元素的数量          |
+| a.empty()           | 检查队列是否为空，返回 true 如果队列为空，否则返回 false |
 ##### &emsp;1.3 实践运用：
+```c++
+#include <iostream>
+#include <queue>
+using namespace std;
 
-- 
+int main() {
+    // 创建一个队列
+    queue<int> myQueue;
+
+    // 向队列中添加元素
+    myQueue.push(10); // 队列: 10
+    myQueue.push(20); // 队列: 10 20
+    myQueue.push(30); // 队列: 10 20 30
+
+    // 输出队列中的第一个元素
+    cout << "Front element: " << myQueue.front() << endl; // 输出: 10
+
+    // 输出队列中的最后一个元素
+    cout << "Back element: " << myQueue.back() << endl; // 输出: 30
+
+    // 删除队列中的第一个元素
+    myQueue.pop(); // 队列: 20 30
+
+    // 输出删除元素后队列的大小
+    cout << "Queue size after pop: " << myQueue.size() << endl; // 输出: 2
+
+    // 检查队列是否为空
+    if (myQueue.empty()) {
+        cout << "Queue is empty" << endl; // 不会执行
+    } else {
+        cout << "Queue is not empty" << endl; // 输出: Queue is not empty
+    }
+
+    return 0;
+}
+```
 
 <hr/>
 
 ### &emsp;<span id="jump4">四.deque容器</span>
 
 ##### &emsp;1.1 介绍：
-
+- 引入头文件`#include<deque>`
 - deque 是双端队列（Double-Ended Queue）的缩写，它是一种可以在两端进行高效插入和删除操作的动态数组。与普通的队列不同，deque 允许在头部和尾部都进行快速的插入和删除。
 
 ##### &emsp;1.2 容器包含的函数(介绍常用的一些，其余的可以去百度)：
-
-- 
-
+| 函数              | 作用                                |
+|-----------------|-----------------------------------|
+| a.push_front(x) | 将元素 x 添加到双端队列的前端                |
+| a.push_back(x)  | 将元素 x 添加到双端队列的后端              |
+| a.back()        | 返回双端队列中最后一个元素的，但不删除该元素                  |
+| a.front()       | 返回双端队列中第一个元素的，但不删除该元素                |
+| a.pop_back()    | 删除双端队列中的最后一个元素                       |
+| a.pop_front()   | 删除双端队列中的第一个元素 |
+| empty()         | 检查双端队列是否为空，返回 true 如果队列为空，否则返回 false |
+| a.size()        | 返回双端队列中元素的数量 |
+| a.clear()       | 清空双端队列，移除所有元素 |
 ##### &emsp;1.3 实践运用：
 
-- 
+```c++
+#include <iostream>
+#include <deque>
+using namespace std;
 
+int main() {
+    // 创建一个双端队列
+    deque<int> myDeque;
+
+    // 向队列两端添加元素
+    myDeque.push_back(10); // 双端队列: [10]
+    myDeque.push_back(20); // 双端队列: [10, 20]
+    myDeque.push_front(5); // 双端队列: [5, 10, 20]
+
+    // 输出队列中的第一个元素和最后一个元素
+    cout << "Front element: " << myDeque.front() << endl; // 输出: 5
+    cout << "Back element: " << myDeque.back() << endl;   // 输出: 20
+
+    // 删除队列中的第一个和最后一个元素
+    myDeque.pop_front(); // 双端队列: [10, 20]
+    myDeque.pop_back();  // 双端队列: [10]
+
+    // 输出删除元素后队列的大小
+    cout << "Deque size after pop: " << myDeque.size() << endl; // 输出: 1
+
+    // 检查队列是否为空
+    if (myDeque.empty()) {
+        cout << "Deque is empty" << endl; // 不会执行
+    } else {
+        cout << "Deque is not empty" << endl; // 输出: Deque is not empty
+    }
+
+    // 清空双端队列
+    myDeque.clear();
+
+    // 输出清空后队列的大小
+    cout << "Deque size after clear: " << myDeque.size() << endl; // 输出: 0
+
+    return 0;
+}
+```
 <hr/>
 
 ### &emsp;<span id="jump5">五.priority_queue容器</span>
 
 ##### &emsp;1.1 介绍：
-
+- 引入头文件`#include<queue>`
 - priority_queue 是一个优先队列，它会按照元素的优先级自动对元素进行排序。元素的优先级可以通过自定义的比较函数或元素自身的特性来确定。
 
 ##### &emsp;1.2 容器包含的函数(介绍常用的一些，其余的可以去百度)：
-
-- 
-
+| 函数            | 作用                             |
+|---------------|--------------------------------|
+| a.top()       | 返回优先队列中的顶部元素，但不删除该元素             |
+| a.push()      | 将元素添加到优先队列              |
+| a.pop()       | 删除优先队列中的顶部元素                |
+| a.size()      | 返回优先队列中的元素数量             |
+| a.empty()     | 检查优先队列是否为空。返回 true 如果队列为空，否则返回 false                    |
 ##### &emsp;1.3 实践运用：
+```c++
+#include <iostream>
+#include <queue>
+using namespace std;
 
-- 
+int main() {
+    // 创建一个优先队列
+    priority_queue<int> myPriorityQueue;
 
+    // 将元素添加到优先队列
+    myPriorityQueue.push(30);
+    myPriorityQueue.push(100);
+    myPriorityQueue.push(25);
+    myPriorityQueue.push(40);
+
+    // 输出优先队列中的顶部元素
+    cout << "Top element: " << myPriorityQueue.top() << endl; // 输出: 100
+
+    // 删除优先队列中的顶部元素
+    myPriorityQueue.pop();
+    
+    // 输出删除元素后优先队列的大小
+    cout << "Priority queue size after pop: " << myPriorityQueue.size() << endl; // 输出: 3
+
+    // 检查优先队列是否为空
+    if (myPriorityQueue.empty()) 
+    {
+        //不会执行
+        cout << "Priority queue is empty" << endl; 
+    } 
+    else
+    {
+        // 输出: Priority queue is not empty
+        cout << "Priority queue is not empty" << endl; 
+    }
+
+    return 0;
+}
+```
 <hr/>
 
 ### &emsp;<span id="jump6">六.set容器</span>
