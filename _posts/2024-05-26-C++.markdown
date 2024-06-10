@@ -11,9 +11,9 @@ author: FTX #作者
 
 ##### &emsp;这里我们介绍一下 **C++** 算法竞赛中的STL常用的容器和函数用法：
 在这个C++ STL容器运用的部分，我们只简单的介绍常用的语法和运用，每一个容器的结束也都会举与容器有关的题目来实践运用。如有补充不全或者错误，还请多包涵。
-#### [一.vector容器](#jump1)[二.pair容器](#jump2)[三.queue容器](#jump3)[四.deque容器](#jump4)[五.priority_queue容器](#jump5)
+#### [一.vector容器](#jump1)&emsp;[二.pair容器](#jump2)&emsp;[三.queue容器](#jump3)&emsp;[四.deque容器](#jump4)&emsp;[五.priority_queue容器](#jump5)
 
-#### [六.set容器](#jump6)[七.map容器](#jump7)[八.string容器](#jump8)[九.stack容器](#jump9)[十.tuple容器](#jump10)
+#### [六.set容器](#jump6)&emsp;[七.map容器](#jump7)&emsp;[八.string容器](#jump8)&emsp;[九.stack容器](#jump9)&emsp;[十.tuple容器](#jump10)
 
 
 
