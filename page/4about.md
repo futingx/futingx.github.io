@@ -11,19 +11,15 @@ type: page
 
 ## 关于我
 
-<!-- <iframe src="https://githubbadge.appspot.com/gaohaoyang?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe> -->
-
-
+<!-- <iframe src="https://githubbadge.appspot.com/futingx?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe> -->
 
 ## 联系我
 
-* GitHub：[futingx](https://github.com/futingx)
-* email：20031124f@gmail.com
-* [Weibo](http://weibo.com/3115521wh)
-* [知乎](https://www.zhihu.com/people/gaohaoyang)
-* [Facebook](https://www.facebook.com/gaohaoyang.water)
-* [豆瓣](https://www.douban.com/people/42525035/)
-* [豆瓣音乐人-浩阳的小站](https://site.douban.com/haoyangaiyinyue/)
+#### GitHub：[futingx](https://github.com/futingx)
+#### email：3167089271@qq.com
+#### [Facebook](https://www.facebook.com/profile.php?id=100092209958653)
+#### [CSDN](https://blog.csdn.net/weixin_74821314?spm=1000.2115.3001.5343)
+#### [IG](futingxi)
 
 ## 友情链接
 
