@@ -11,21 +11,22 @@ author: FTX #作者
 
 ##### &emsp;这里我们介绍一下 **C++** 算法竞赛中的STL常用的容器和函数用法：
 在这个C++ STL容器运用的部分，我们只简单的介绍常用的语法和运用，每一个容器的结束也都会举与容器有关的题目来实践运用。如有补充不全或者错误，还请多包涵。
-#### 一.vector容器
-#### 一.pair容器
-#### 一.queue容器
-#### 一.deque容器
-#### 一.priority_queue容器
-#### 一.set容器
-#### 一.map容器
-#### 一.string容器
-#### 一.tuple容器
+#### [一.vector容器](#jump1)
+#### [二.pair容器](#jump2)
+#### [三.queue容器](#jump3)
+#### [四.deque容器](#jump4)
+#### [五.priority_queue容器](#jump5)
+#### [六.set容器](#jump6)
+#### [七.map容器](#jump7)
+#### [八.string容器](#jump8)
+#### [九.stack容器](#jump9)
+#### [十.tuple容器](#jump10)
 
 
 
 
 
-### 一.vector容器
+### <span id="jump1">一.vector容器</span>
 ##### 1.1 介绍：
 - 引入头文件：`#include<vector>`
 - 动态数组,可以随时删除和增加元素，相比于直接在局部定义数组大小，vector不会发生爆栈，对大容量存储数据很友好。
@@ -99,10 +100,10 @@ int main() {
 using namespace std; // 使用标准命名空间
 
 int main(){
-    int n; // 定义变量n，表示数组大小
-    cin>>n; // 输入数组大小
+    int n; 
+    cin>>n;
     vector<int> a; // 声明一个整型向量a，用于存储输入的元素
-    for(int i=0;i<n;i++) // 循环n次，读入n个元素
+    for(int i=0;i<n;i++) 
     {
         int k; // 定义变量k，表示当前输入的元素值
         cin>>k; // 输入元素值
@@ -113,7 +114,7 @@ int main(){
     
     a.insert(a.begin()+x-1,y); // 在位置x-1处插入元素值y
     
-    //c++11循环语法 
+    //c++11基于范围循环语法 
     for(auto &it:a) // 遍历向量a中的所有元素
     {
         cout<<it<<" "; // 输出当前元素值，并跟一个空格
@@ -124,7 +125,7 @@ int main(){
 
 <hr/>
 
-### &emsp;二.pair容器
+### &emsp;<span id="jump2">二.pair容器</span>
 
 ##### &emsp;1.1 介绍：
 
@@ -139,7 +140,7 @@ int main(){
 -
 <hr/>
 
-### &emsp;三.queue容器
+### &emsp;<span id="jump3">三.queue容器</span>
 
 ##### &emsp;1.1 介绍：
 
@@ -155,7 +156,7 @@ int main(){
 
 <hr/>
 
-### &emsp;四.deque容器
+### &emsp;<span id="jump4">四.deque容器</span>
 
 ##### &emsp;1.1 介绍：
 
@@ -171,7 +172,7 @@ int main(){
 
 <hr/>
 
-### &emsp;五.priority_queue容器
+### &emsp;<span id="jump5">五.priority_queue容器</span>
 
 ##### &emsp;1.1 介绍：
 
@@ -187,7 +188,7 @@ int main(){
 
 <hr/>
 
-### &emsp;六.set容器
+### &emsp;<span id="jump6">六.set容器</span>
 
 ##### &emsp;1.1 介绍：
 
@@ -203,7 +204,7 @@ int main(){
 
 <hr/>
 
-### &emsp;七.map容器
+### &emsp;<span id="jump7">七.map容器</span>
 
 ##### &emsp;1.1 介绍：
 
@@ -219,7 +220,7 @@ int main(){
 
 <hr/>
 
-### &emsp;八.string容器
+### &emsp;<span id="jump8">八.string容器</span>
 
 ##### &emsp;1.1 介绍：
 
@@ -235,7 +236,7 @@ int main(){
 
 <hr/>
 
-### &emsp;九.stack容器
+### &emsp;<span id="jump9">九.stack容器</span>
 
 ##### &emsp;1.1 介绍：
 
@@ -251,7 +252,7 @@ int main(){
 
 <hr/>
 
-### &emsp;十.tuple容器
+### &emsp;<span id="jump10">十.tuple容器</span>
 
 ##### &emsp;1.1 介绍：
 
