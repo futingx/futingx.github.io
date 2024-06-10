@@ -26,7 +26,7 @@ author: FTX #作者
 
 
 
-### <span id="jump1">一.vector容器</span>
+### <a id="jump1">一.vector容器</a>
 ##### 1.1 介绍：
 - 引入头文件：`#include<vector>`
 - 动态数组,可以随时删除和增加元素，相比于直接在局部定义数组大小，vector不会发生爆栈，对大容量存储数据很友好。
@@ -125,7 +125,7 @@ int main(){
 
 <hr/>
 
-### &emsp;<span id="jump2">二.pair容器</span>
+### &emsp;<a id="jump2">二.pair容器</a>
 
 ##### &emsp;1.1 介绍：
 - 引入头文件`#include<utility>`
@@ -174,7 +174,7 @@ int main() {
 
 <hr/>
 
-### &emsp;<span id="jump3">三.queue容器</span>
+### &emsp;<a id="jump3">三.queue容器</a>
 
 ##### &emsp;1.1 介绍：
 - 引入头文件`#include<queue>`
@@ -231,7 +231,7 @@ int main() {
 
 <hr/>
 
-### &emsp;<span id="jump4">四.deque容器</span>
+### &emsp;<a id="jump4">四.deque容器</a>
 
 ##### &emsp;1.1 介绍：
 - 引入头文件`#include<deque>`
@@ -296,7 +296,7 @@ int main() {
 ```
 <hr/>
 
-### &emsp;<span id="jump5">五.priority_queue容器</span>
+### &emsp;<a id="jump5">五.priority_queue容器</a>
 
 ##### &emsp;1.1 介绍：
 - 引入头文件`#include<queue>`
@@ -354,7 +354,7 @@ int main() {
 ```
 <hr/>
 
-### &emsp;<span id="jump6">六.set容器</span>
+### &emsp;<a id="jump6">六.set容器</a>
 
 ##### &emsp;1.1 介绍：
 
@@ -370,7 +370,7 @@ int main() {
 
 <hr/>
 
-### &emsp;<span id="jump7">七.map容器</span>
+### &emsp;<a id="jump7">七.map容器</a>
 
 ##### &emsp;1.1 介绍：
 
@@ -386,7 +386,7 @@ int main() {
 
 <hr/>
 
-### &emsp;<span id="jump8">八.string容器</span>
+### &emsp;<a id="jump8">八.string容器</a>
 
 ##### &emsp;1.1 介绍：
 
@@ -402,7 +402,7 @@ int main() {
 
 <hr/>
 
-### &emsp;<span id="jump9">九.stack容器</span>
+### &emsp;<a id="jump9">九.stack容器</a>
 
 ##### &emsp;1.1 介绍：
 
@@ -418,7 +418,7 @@ int main() {
 
 <hr/>
 
-### &emsp;<span id="jump10">十.tuple容器</span>
+### &emsp;<a id="jump10">十.tuple容器</a>
 
 ##### &emsp;1.1 介绍：
 
