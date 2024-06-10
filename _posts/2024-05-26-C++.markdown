@@ -350,32 +350,150 @@ int main() {
 ### &emsp;<a id="jump6">六.set容器</a>
 
 ##### &emsp;1.1 介绍：
-
+- 引入头文件`#include<set>`
 - set 是一种集合数据结构，它存储一组唯一的元素。set 中的元素是无序的，并且不允许重复。它提供了高效的元素插入、删除和查找操作。
 
 ##### &emsp;1.2 容器包含的函数(介绍常用的一些，其余的可以去百度)：
 
-- 
+| 函数           | 作用                                         |
+|----------------|--------------------------------------------|
+| `a.begin()`    | 返回指向容器中第一个元素的迭代器。                        |
+| `a.end()`      | 返回指向容器中最后一个元素之后的位置的迭代器。                |
+| `a.clear()`    | 清空容器，删除所有元素。                               |
+| `a.empty()`    | 检查容器是否为空。如果容器为空，则返回 `true`；否则返回 `false`。   |
+| `a.size()`     | 返回容器中元素的数量。                               |
+| `a.insert(x)`  | 在容器中插入元素 `x`。如果元素已存在，则不插入。返回一个指向插入位置或现有元素位置的迭代器。 |
+| `a.erase(地址)` | 删除容器中指定位置的元素。                           |
+| `a.find(x)`    | 在容器中查找值为 `x` 的元素，返回指向该元素的迭代器。如果找不到，则返回 `a.end()`。 |
+| `a.count(x)`   | 返回容器中值为 `x` 的元素的个数。                        |
+| `a.lower_bound(x)` | 返回一个迭代器，指向第一个不小于 `x` 的元素。如果所有元素都小于 `x`，则返回 `a.end()`。 |
+| `a.upper_bound(x)` | 返回一个迭代器，指向第一个大于 `x` 的元素。如果所有元素都不大于 `x`，则返回 `a.end()`。 |
 
 ##### &emsp;1.3 实践运用：
 
-- 
+```c++
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main() {
+    // 创建一个 set 容器
+    set<int> mySet;
+
+    // 插入元素到 set
+    mySet.insert(30);
+    mySet.insert(100);
+    mySet.insert(25);
+    mySet.insert(40);
+
+    // 输出 set 中的元素
+    cout << "Set elements:";
+    for (auto it = mySet.begin(); it != mySet.end(); ++it) {
+        cout << " " << *it;
+    }
+    cout << endl; // 输出: Set elements: 25 30 40 100
+
+    // 删除 set 中的元素或者也可以删除对应的地址的元素。
+    mySet.erase(30);//mySet.erase(mySet.begin()+1);
+
+    // 输出删除元素后 set 的大小
+    cout << "Set size after erase: " << mySet.size() << endl; // 输出: Set size after erase: 3
+
+    // 检查 set 是否为空
+    if (mySet.empty()) {
+        cout << "Set is empty" << endl; // 不会执行
+    } else {
+        cout << "Set is not empty" << endl; // 输出: Set is not empty
+    }
+
+    // 查找元素
+    auto it = mySet.find(25);
+    if (it != mySet.end()) {
+        cout << "Element found: " << *it << endl; // 输出: Element found: 25
+    } else {
+        cout << "Element not found" << endl;
+    }
+
+    return 0;
+}
+```
 
 <hr/>
 
 ### &emsp;<a id="jump7">七.map容器</a>
 
 ##### &emsp;1.1 介绍：
-
+- 引入头文件`#include<map>`
 - map 是一种关联容器，它将键（Key）与值（Value）关联起来。map 中的元素是按照键进行排序的，并且键必须是唯一的。它提供了高效的键值对存储和查找功能。
 
 ##### &emsp;1.2 容器包含的函数(介绍常用的一些，其余的可以去百度)：
 
-- 
+| 函数               | 作用                                                   |
+|--------------------|------------------------------------------------------|
+| `m.begin()`        | 返回指向容器中第一个元素的迭代器。                                  |
+| `m.end()`          | 返回指向容器中最后一个元素之后的位置的迭代器。                          |
+| `m.clear()`        | 清空容器，删除所有元素。                                         |
+| `m.empty()`        | 检查容器是否为空。如果容器为空，则返回 `true`；否则返回 `false`。            |
+| `m.size()`         | 返回容器中元素的数量。                                         |
+| `m.insert(pair)`   | 在容器中插入键值对 `pair`。如果键已存在，则不插入。返回一个指向插入位置或现有元素位置的迭代器。 |
+| `m.erase(key)`     | 删除容器中指定键 `key` 对应的元素。                               |
+| `m.find(key)`      | 在容器中查找键为 `key` 的元素，返回指向该元素的迭代器。如果找不到，则返回 `m.end()`。 |
+| `m.count(key)`     | 返回容器中键为 `key` 的元素的个数。                                  |
+| `m.lower_bound(key)` | 返回一个迭代器，指向第一个不小于 `key` 的元素。如果所有元素都小于 `key`，则返回 `m.end()`。 |
+| `m.upper_bound(key)` | 返回一个迭代器，指向第一个大于 `key` 的元素。如果所有元素都不大于 `key`，则返回 `m.end()`。 |
+
 
 ##### &emsp;1.3 实践运用：
 
-- 
+```c++
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main() {
+    map<int, string> map;
+
+    // 插入元素
+    map.insert({1, "One"});
+    map.insert({2, "Two"});
+    map.insert({3, "Three"});
+
+    // 直接输出键值对
+    cout << "1: " << map[1] << endl; //One
+    cout << "2: " << map[2] << endl;//Two
+    cout << "3: " << map[3] << endl;//Three
+
+    // 清空操作
+    map.clear();
+    // Map is empty: true
+    cout << "Map is empty: " << (map.empty() ? "true" : "false") << endl;
+
+    // 大小和查找操作
+    // Map size: 0
+    cout << "Map size: " << map.size() << endl;
+    // Key 2 found: false
+    cout << "Key 2 found: " << (map.find(2) != map.end() ? "true" : "false") << endl;
+
+    // 计数操作
+    // Count of key 3: 0
+    cout << "Count of key 3: " << map.count(3) << endl;
+
+    // lower_bound 和 upper_bound 操作
+    map.insert({1, "One"});
+    map.insert({2, "Two"});
+    map.insert({3, "Three"});
+    
+    auto lower = map.lower_bound(2);
+    auto upper = map.upper_bound(2);
+    
+    // Lower bound of key 2: 2
+    cout << "Lower bound of key 2: " << lower->first << endl;
+    // Upper bound of key 2: 3
+    cout << "Upper bound of key 2: " << upper->first << endl;
+
+    return 0;
+}
+```
 
 <hr/>
 
@@ -398,32 +516,98 @@ int main() {
 ### &emsp;<a id="jump9">九.stack容器</a>
 
 ##### &emsp;1.1 介绍：
-
+- 引入头文件`#include<stack>`
 - stack 是一种后进先出（LIFO）的数据结构，它模拟了栈的行为。元素只能从栈顶进行插入和删除操作，最后进入栈的元素最先被取出。
 
 ##### &emsp;1.2 容器包含的函数(介绍常用的一些，其余的可以去百度)：
 
-- 
+| 函数                   | 作用                                                  |
+|----------------------|-----------------------------------------------------|
+| `a.push(x)`          | 将元素 `x` 压入栈。                                  |
+| `a.pop()`            | 弹出栈顶的元素，不返回任何值。                          |
+| `a.top()`            | 返回栈顶元素的引用，但不删除该元素。                                        |
+| `a.empty()`          | 检查栈是否为空。如果容器为空，则返回 `true`；否则返回 `false`。           |
+| `a.size()`           | 返回栈中元素的数量。                                        |
 
 ##### &emsp;1.3 实践运用：
 
-- 
+```c++
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main() {
+    stack<int> a;
+
+    // push 元素
+    a.push(1);
+    a.push(2);
+    a.push(3);
+
+    // pop 元素
+    a.pop();
+
+    // top 元素
+    cout << "Top element: " << a.top() << endl; // Top element: 2
+
+    // 检查是否为空
+    cout << "Is stack empty: " << (a.empty() ? "true" : "false") << endl; // Is stack empty: false
+
+    // 返回容器中元素的数量
+    cout << "Size of stack: " << a.size() << endl; // Size of stack: 2
+
+    return 0;
+}
+```
 
 <hr/>
 
 ### &emsp;<a id="jump10">十.tuple容器</a>
 
 ##### &emsp;1.1 介绍：
-
+- `#include<tuple>`
 - tuple 是一种固定大小的元组数据结构，可以存储多个不同类型的元素。它提供了一种方便的方式来组合多个相关的数据项，并可以通过索引或类型推导来访问这些元素。
 
 ##### &emsp;1.2 容器包含的函数(介绍常用的一些，其余的可以去百度)：
 
-- 引入头文件：`#include<vector>`
-- 不过我个人更喜欢万能头文件`#include<bits/stdc++.h>`,万能头文件有可能会降低程序运行效率，有利有弊但是不需要记这么多容器word
+| 函数                   | 作用                             |
+|----------------------|--------------------------------|
+| `make_tuple(...)`          | 创建并返回一个新的 `tuple` 对象，其中包含传入的参数。|
+| `tie(...)`            | 创建一个包含传入参数的引用 `tuple` 对象。      |
+| `get<i>(tuple)`            | 返回 `tuple` 中索引为 `i` 的元素的引用，索引从 0 开始。 |
+| `tuple_size<decltype(tuple)>::value`          | 返回 `tuple` 中元素的数量。             |
+| `tuple_element<i, decltype(tuple)>::type`           | 返回 `tuple` 中索引为 `i` 的元素的类型，索引从 0 开始。 |                                  
 
 ##### &emsp;1.3 实践运用：
 
-- 
+```c++
+#include <iostream>
+#include <tuple>
+
+using namespace std;
+
+int main() {
+    // 创建一个 tuple 对象
+    auto my_tuple = make_tuple(10, 'a', 3.14);
+
+    // 使用 tie 创建引用 tuple
+    int a;
+    char b;
+    double c;
+    tie(a, b, c) = my_tuple; // 将 my_tuple 中的值解包到 a、b、c 中
+
+    // 访问 tuple 元素
+    cout << "Tuple elements: " << get<0>(my_tuple) << ", " << get<1>(my_tuple) << ", " << get<2>(my_tuple) << endl; // 使用 get<> 访问 tuple 的元素值
+
+    // 获取 tuple 大小
+    cout << "Size of tuple: " << tuple_size<decltype(my_tuple)>::value << endl; // 输出 tuple 的大小
+
+    // 获取 tuple 元素类型
+    typedef tuple_element<1, decltype(my_tuple)>::type TypeB;
+    cout << "Type of tuple element at index 1: " << typeid(TypeB).name() << endl; // 输出 tuple 第二个元素的类型
+
+    return 0;
+}
+```
 
 <hr/>
