@@ -1,9 +1,8 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# 欢迎使用 Jekyll！
+# 此配置文件用于设置影响您整个博客的值
+# 您只需设置一次，之后很少需要编辑。
+# 由于技术原因，当您使用
+# 'jekyll serve' 时，此文件不会自动重新加载。如果您更改此文件，请重新启动服务器进程。
 
 # Site settings
 title: DHappy
@@ -15,7 +14,7 @@ permalink: /:year/:month/:day/:title/
 
 # other links
 twitter_username: 暂无
-facebook_username: futingxi
+facebook_username: futi ngxi
 github_username:  futingxi
 email: 20031124f@gmail.com
 weibo_username: 四喜丸子
