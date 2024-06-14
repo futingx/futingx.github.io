@@ -10,20 +10,19 @@ type: page
 {:toc}
 
 ## 关于我
-
-<!-- <iframe src="https://githubbadge.appspot.com/futingx?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe> -->
+#### &emsp; 来自大山
 
 ## 联系我
 
-#### GitHub：[futingx](https://github.com/futingx)
-#### email：3167089271@qq.com
-#### [Facebook](https://www.facebook.com/profile.php?id=100092209958653)
-#### [CSDN](https://blog.csdn.net/weixin_74821314?spm=1000.2115.3001.5343)
-#### [IG](futingxi)
+#### &emsp; GitHub：[futingx](https://github.com/futingx)
+#### &emsp;  email：3167089271@qq.com
+#### &emsp; [Facebook](https://www.facebook.com/profile.php?id=100092209958653)
+#### &emsp; [CSDN](https://blog.csdn.net/weixin_74821314?spm=1000.2115.3001.5343)
+#### &emsp; [IG](futingxi)
 
 ## 友情链接
 
-[羡辙杂俎](http://zhangwenli.com/blog) \| [Anotherhome](https://www.anotherhome.net) \| [Reverland](http://reverland.org/) \| [ZhiLi](http://lizhipower.github.io/) \| [Simmer](http://simmer-jun.github.io/) \| [awthink](http://awthink.net/) \| [Aralic](http://aralic.github.io/) \| [zchen9](http://www.chen9.info/) \| [wuhuaji](http://wuhuaji.me/) \| [lisheng](http://www.lishengcn.cn/) \| [薛彬XueBin](http://axuebin.com/blog/) \| [TBOOX](http://www.tboox.org/cn/) \|  [Ling](http://linglinyp.com/)
+&emsp; [羡辙杂俎](http://zhangwenli.com/blog) \| [Anotherhome](https://www.anotherhome.net) \| [Reverland](http://reverland.org/) \| [ZhiLi](http://lizhipower.github.io/) \| [Simmer](http://simmer-jun.github.io/) \| [awthink](http://awthink.net/) \| [Aralic](http://aralic.github.io/) \| [zchen9](http://www.chen9.info/) \| [wuhuaji](http://wuhuaji.me/) \| [lisheng](http://www.lishengcn.cn/) \| [薛彬XueBin](http://axuebin.com/blog/) \| [TBOOX](http://www.tboox.org/cn/) \|  [Ling](http://linglinyp.com/)
 
 ## Comments
 
