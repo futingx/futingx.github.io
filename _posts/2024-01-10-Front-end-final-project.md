@@ -10,7 +10,7 @@ author: FTX
 {:toc}
 
 这个项目是我在大二上学期开设的Web前端课程学习期末的一个答辩项目。大家可以借鉴参考使用。附上项目源码地址[https://github.com/futingx/awesome-Web-Design.git](https://github.com/futingx/awesome-Web-Design.git)<br>
-技术栈：HTML5,CSS,Javascript
+#### 技术栈：HTML5,CSS,Javascript
 <br>
 以下是该项目所具有的功能模块：
 1. **背景特效**：
