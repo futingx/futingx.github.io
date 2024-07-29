@@ -1,7 +1,6 @@
 ---
 layout: post
-title:  "
-这是应该java项目"
+title:  "这是应该java项目"
 categories: Github
 tags:  Github
 author: FTX
