@@ -11,7 +11,7 @@ author: FTX
 
 
 如何用 PyCharm 通过 Git 推送文件到 GitHub
-### 步骤一：配置 GitHub 账号
+#### 步骤一：配置 GitHub 账号
 
 1. **登录 GitHub**：确保你已经在 GitHub 上创建了账号，并且了解你的用户名和密码。
 
@@ -24,7 +24,7 @@ author: FTX
 
 
 
-### 步骤二：在 PyCharm 中设置 Git
+#### 步骤二：在 PyCharm 中设置 Git
 
 1. **打开项目**：在 PyCharm 中打开你的项目或者创建一个新项目。
 
@@ -32,7 +32,7 @@ author: FTX
    - 在 PyCharm 中，右键点击项目根目录，选择 `Git -> Initialize Repository`。
    - 确认初始化后，PyCharm 会自动为你的项目创建一个本地的 Git 仓库。
 
-### 步骤三：提交和推送更改
+#### 步骤三：提交和推送更改
 
 1. **添加远程仓库**：
    - 在 PyCharm 中，打开 `VCS` 菜单，选择 `Git -> Remotes...`。
@@ -46,7 +46,7 @@ author: FTX
    - 提交后，选择 `VCS -> Git -> Push...`。
    - 确认推送的分支和远程仓库，然后点击 `Push` 按钮。
 
-### 步骤四：验证推送
+#### 步骤四：验证推送
 
 1. **检查 GitHub 上的更新**：
    - 打开你的 GitHub 仓库页面，确认你的更改已经成功推送到远程仓库。
