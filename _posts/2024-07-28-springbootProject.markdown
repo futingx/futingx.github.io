@@ -19,7 +19,7 @@ author: FTX
 
 开发环境：JDK 8.0
 
-开发工具：IDEA202
+开发工具：IDEA2024
 
 数  据  库：MySQL
 
