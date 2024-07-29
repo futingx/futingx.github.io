@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "这是应该java项目"
-categories: Github
-tags:  Github
+title:  "图书管理系统"
+categories: Java
+tags:  Java
 author: FTX
 ---
 
