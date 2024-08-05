@@ -1,0 +1,151 @@
+---
+layout: post
+title:  "SHA3加密算法"
+categories: Java
+tags:  Java
+author: FTX
+---
+
+* content
+{:toc}
+
+这个算法是大二下实习的时候学习的加密算法，在07月-28日的这个项目当中util目录下有所运用。
+#### 哈希函数加密和密码验证
+
+1. **加密过程**：
+   - 当用户注册或更改密码时，用户输入的密码会经过哈希函数（如SHA-256、bcrypt等）进行加密处理。
+   - 哈希函数将密码转换成固定长度的哈希值（散列值），这个过程是不可逆的，即无法从哈希值反推出原始密码。
+2. **存储哈希值**：
+   - 数据库中存储的是经过哈希函数处理后的密码哈希值，而不是明文密码。
+3. **验证过程**：
+   - 当用户登录时，输入的密码再次经过相同的哈希函数处理，得到一个哈希值。
+   - 系统将这个哈希值与数据库中存储的密码哈希值进行比较。
+   - 如果两者匹配，则密码验证通过；否则验证失败。
+
+
+
+
+
+#### 为什么不解密密码进行比较？
+
+- **安全性考虑**：密码哈希后存储，即使数据库被泄露，攻击者也无法直接获得用户的明文密码，因为哈希函数是不可逆的。
+- **密码保护**：保护用户隐私和安全是系统设计中的重要考虑因素，避免以明文形式存储或传输密码。
+- **密码泄露后果降低**：即使数据库被攻击者获取，也不会直接泄露用户的密码，减少了损失。
+
+#### 哈希函数的选择
+
+- **推荐使用强哈希函数**，如SHA-3，SHA-256或bcrypt等，因为它们具有抗碰撞能力和计算复杂度，增加了破解的难度。
+- **避免过时的哈希算法**，因为一些旧的哈希算法可能存在漏洞或计算速度过快，容易被暴力破解。
+
+
+
+
+
+#### 算法介绍
+
+   SHA-3（Secure Hash Algorithm 3）是由NIST（美国国家标准与技术研究院）于2015年发布的最新安全散列算法标准。SHA-3系列算法是基于Keccak（由Guido Bertoni、Joan Daemen、Michaël Peeters和Gilles Van Assche设计）的，加密强度和灵活性上优于其前任SHA-2。
+
+SHA-3 的特点：
+
+1.      **不同的设计思路**：与SHA-2（基于梅克尔-丹姆加德结构）不同，SHA-3采用海绵结构（sponge construction）。这种结构允许数据的吸收（absorption）和挤出（squeezing）过程，使得算法更加灵活。
+
+2.      **多种输出长度**：SHA-3支持多种不同的输出长度，包括224位、256位、384位和512位。这使得SHA-3能够根据不同的安全需求进行调整。
+
+3.      **抵御各种攻击**：SHA-3设计时考虑了对抗各种已知的哈希攻击方法，如碰撞攻击（collisionattack）、预图攻击（preimage attack）和长度扩展攻击
+
+
+
+由于SHA-3的高安全性和灵活性，它适用于广泛的应用场景，包括但不限于：
+
+- 数字签名
+- 数据完整性验证
+- 消息认证码（MAC）
+- 密钥生成和密码学应用
+
+**其他加密算法介绍**
+
+​      由于MD5存在严重的安全漏洞，包括碰撞攻击（collision attack）和预图攻击（preimage attack），因此不再推荐用于安全性要求较高的领域。实际上，许多安全专家已建议停止使用MD5算法，而要选择更安全的哈希函数，如SHA-256、SHA-3等
+
+​       SHA-256相比于MD5等之前的哈希函数算法具有更高的安全性，目前被广泛应用于加密通信、数字签名、SSL/TLS协议等领域。然而，随着计算能力的增强，SHA-256也逐渐出现了一些安全性问题，例如长度扩展攻击（length extension attack）。因此，在某些特定的安全要求较高的场景中，可能需要考虑使用更强大的哈希函数算法，例如SHA-3系列。
+
+算法安全性： SHA-3  > SHA-256 > MD5
+
+### 环境搭建
+
+引入依赖
+
+```xml
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.69</version>
+        </dependency>
+```
+
+
+
+### 工具类
+
+```java
+package com.hqyj.util;
+
+import org.bouncycastle.crypto.digests.SHA3Digest;
+import org.bouncycastle.util.encoders.Hex;
+
+import java.security.SecureRandom;
+
+/**
+ * 描述:SHA3 加密算法工具类
+ * 时间:2024/6/12 17:18
+ * 作者:admin
+ * 版本:1.0
+ **/
+public class SHA3Util {
+    /**
+     * 生成加盐加密后的数据
+     * @param data 需要加密的数据
+     * @param salt 盐值
+     * @return 加密后的数据
+     */
+    public static String hashWithSalt(String data, String salt) {
+        byte[] input = data.getBytes();
+        byte[] saltBytes = salt.getBytes();
+
+        // 将原始数据和盐值连接起来
+        byte[] dataWithSalt = new byte[input.length + saltBytes.length];
+        System.arraycopy(input, 0, dataWithSalt, 0, input.length);
+        System.arraycopy(saltBytes, 0, dataWithSalt, input.length, saltBytes.length);
+
+        SHA3Digest digest = new SHA3Digest(256);
+        digest.update(dataWithSalt, 0, dataWithSalt.length);
+
+        byte[] hash = new byte[digest.getDigestSize()];
+        digest.doFinal(hash, 0);
+
+        return Hex.toHexString(hash);
+    }
+
+    /**
+     * 生成盐值
+     * @param length 盐值长度设定
+     * @return
+     */
+    public static String generateRandomSalt(int length) {
+        SecureRandom random = new SecureRandom();
+        byte[] salt = new byte[length];
+        random.nextBytes(salt);
+        return Hex.toHexString(salt);
+    }
+
+    public static void main(String[] args) {
+        String data = "123";
+        String salt = generateRandomSalt(16);
+        String hashedData = hashWithSalt(data, salt);
+
+        System.out.println("原始密码: " + data);
+        System.out.println("盐值: " + salt);
+        System.out.println("加密加盐后的密码: " + hashedData);
+    }
+}
+```
+
