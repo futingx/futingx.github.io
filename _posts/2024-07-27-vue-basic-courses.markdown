@@ -77,7 +77,7 @@ Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM
 
 数据绑定最常见的形式就是使用 {{...}}（双大括号）的文本插值：
 
-```
+```html
 <div id="app">
   <p>{{ message }}</p>
 </div>
@@ -99,9 +99,6 @@ new Vue({
 ## 2.2绑定HTML
 
 使用 v-html 指令用于输出 html 代码：
-
-<div id="app">
-
 ```
 <div id="app">
     <div v-html="message"></div>
@@ -123,8 +120,6 @@ new Vue({
 ## 2.3绑定HTML属性
 
 参数在指令后以冒号指明。例如， v-bind 指令被用来响应地更新 HTML 属性
-
-
 
 ```
 <div id="app">
@@ -148,13 +143,9 @@ new Vue({
 
 v-model 指令用来在 input、select、textarea、checkbox、radio 等表单控件元素上创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值
 
- 
-
 ```
-
 <input type="text" v-model="info">
 ```
-
 
 
 ## 2.5缩写
@@ -162,8 +153,6 @@ v-model 指令用来在 input、select、textarea、checkbox、radio 等表单�
 **1 v-bind** **缩写**
 
 Vue.js 为两个最为常用的指令提供了特别的缩写：
-
- 
 
 ```
 <!-- 完整语法 -->
@@ -175,12 +164,7 @@ Vue.js 为两个最为常用的指令提供了特别的缩写：
 <a :href="url"></a>
 ```
 
- 
-
 **2  v-on** **缩写**
-
- 
-
 ```
 <!-- 完整语法 -->
 
@@ -196,9 +180,6 @@ Vue.js 为两个最为常用的指令提供了特别的缩写：
 ## 2.6 v-show指令
 
 v-show指令用来控制html元素是否显示
-
- 
-
 ```
 
 <div id="app">
@@ -227,12 +208,7 @@ new Vue({
 
 ### 3 Vue条件语句
 
- 
-
 条件判断使用 v-if  v-else-if v-else指令：
-
- 
-
 ```
 <div id="app">
     <div v-if="type == 'A'">
@@ -268,11 +244,7 @@ new Vue({
 
 循环使用 v-for 指令。
 
- 
-
 v-for 指令需要以 x in sites 形式的特殊语法， sites 是源数据数组并且 x 是数组元素迭代的别名。
-
- 
 
 v-for 可以绑定数据到数组来渲染一个列表：
 
@@ -329,8 +301,6 @@ Index就是数据索引值(0开头)
 
 v-on或者缩写@ 可以接收一个定义的方法来调用。
 
-
-
 ```
 <div id="app">
 	<button @click="login">登录</button>
@@ -355,9 +325,6 @@ new Vue({
 ## 5.2 方法传参
 
  方法参数传递，和javascript一样可以直接传参
-
-<div id="app">
-
 ```
 <div id="app">
 	<button @click="login(1)">登录</button>
