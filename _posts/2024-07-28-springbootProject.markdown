@@ -13,6 +13,7 @@ author: FTX
 <br>
 项目当中或多或少存在一定的错误，能力有限，还望各位见谅。这个项目将不再进行更新维护，因为作者不走Java方向
 <br>
+项目地址：[图书管理系统](https://github.com/futingx/awesome-springboot-project)
 ##### 目前该项目已经开源供大家参考下载使用。
 #### 技术栈：
 开发平台：Windows11
@@ -25,4 +26,4 @@ author: FTX
 
 数  据  库：MySQL
 
-项目地址：[图书管理系统](https://github.com/futingx/awesome-springboot-project)
+
