@@ -8,21 +8,12 @@ author: FTX
 
 * content
 {:toc}
-
 ### 1 Vue 介绍
-
 Vue.js（读音 /vjuː/, 类似于 view） 是一套构建用户界面的渐进式框架(mvvm架构设计)。
-
 m: 数据  v：视图   vm （数据视图）
-
 Vue 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件(数据双向绑定)。
 
- 
-
 **入门案例**
-
-
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -53,14 +44,12 @@ Vue 的目标是通过尽可能简单的 API 实现响应的数据绑定和组�
 
 
 
+
+
 ## 1.1环境准备
-
-
-
  1 以下推荐国外比较稳定的两个 CDN，国内还没发现哪一家比较好，目前还是建议下载到本地。
 
 Staticfile CDN（国内） : https://cdn.staticfile.org/vue/2.2.2/vue.min.js
-
 
 
 cdnjs : https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js
@@ -520,5 +509,3 @@ new Vue({
 </html>
 
 ```
-
-组件,路由
