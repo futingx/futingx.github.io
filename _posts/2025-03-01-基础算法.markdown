@@ -1,0 +1,693 @@
+---
+layout: post
+title:  "程序设计基础算法"
+categories: 程序设计基础算法
+tags:  程序设计基础算法
+author: FTX
+---
+
+* content
+{:toc}
+
+## 目录
+##### 以下是我在本科学习期间参加程序设计竞赛时期所学习的一些基础程序设计算法，在每一个具体的算法当中我会给你一个模板，并且举一些相应的例子来帮助你理解这些算法，具体应用还是需要你自己多实践，多总结！！！
+- [数论](#数论)
+- [前缀和与差分](#前缀和与差分)
+- [双指针](#双指针)
+- [进制转换](#进制转换)
+
+
+
+
+
+### 数论
+##### 质数判断
+```cpp
+bool is_prime(int n)
+{
+    if(n<=1) return false;
+    for(int i=2;i<sqrt(n);i++)
+    {
+        if(n%i==0)return false;
+    }
+    return true;
+}
+```
+##### 质数筛选（欧拉筛）
+```cpp
+#include<iostream>
+using namespace std;
+bool a[100001] = {1, 1}; // i=0,i=1的时候都不是质数 ，所以直接标记
+int b[100001]; // 存质数 
+int k;
+long long n, m;
+
+int main() {
+    cin >> n >> m;
+    // 首先筛选出 100001 内的质数
+    for (int i = 2; i <= 100000; i++) 
+    {
+        if (a[i] == 0) b[++k] = i;
+        for (int j = 1; j <= k; j++) 
+        {
+            if (i * b[j] > 100000) break;
+            a[i * b[j]] = 1;
+            if (i % b[j] == 0) break;
+        }
+    }
+    
+    // 输出指定范围 [n, m] 内的质数
+    for (int i = n; i <= m; i++) 
+    {
+        if (a[i] == 0) cout << i << " ";
+    }
+    return 0;
+}    
+```
+##### 唯一分解定理
+```cpp
+#include<bits/stdc++.h> 
+using namespace std;
+
+// 函数用于找出一个数的所有质因数
+// 参数 n 是要分解质因数的目标整数
+// 参数 factors 是一个整数向量的引用，用于存储找到的质因数
+void primeFactors(int n, vector<int>& factors) {
+    // 从最小的质数 2 开始尝试分解 n
+    // 循环条件 i * i <= n 保证我们只需要检查到 n 的平方根
+    for (int i = 2; i <= sqrt(n); i++) {
+        // 当 n 能被 i 整除时
+        while (n % i == 0) {
+            // 将 i 作为质因数添加到 factors 向量中
+            factors.push_back(i);
+            // 将 n 除以 i，更新 n 的值，继续寻找其他质因数
+            n /= i;
+        }
+    }
+    // 如果经过上面的循环后，n 仍然大于 1，说明 n 本身是一个质数
+    // 将这个质数添加到 factors 向量中
+    if (n > 1) {
+        factors.push_back(n);
+    }
+}
+
+int main() {
+    int number;
+    cout << "请输入一个正整数: ";
+    cin >> number;
+
+    // 定义一个整数向量 result，用于存储找到的质因数
+    vector<int> result;
+    // 调用 primeFactors 函数，将 number 的质因数存储到 result 向量中
+    primeFactors(number, result);
+
+    // 输出提示信息，表明接下来要输出该数的质因数
+    cout << number << " 的所有质因数是: ";
+    // 遍历存储质因数的向量 result
+    for (int i = 0; i < result.size(); ++i) {
+        cout << result[i];
+        // 如果不是最后一个质因数，输出一个空格进行分隔
+        if (i < result.size() - 1) {
+            cout << " ";
+        }
+    }
+    return 0;
+} 
+```
+##### 快速幂
+```cpp
+#include <iostream>
+using namespace std;
+typedef long long LL;
+//快速幂模板，返回a^k%p的结果
+int qmi(int a,int k,int p){
+    LL res=1%p;          //注意%p
+    while(k){
+        if(k&1) res=res*a%p;  //注意%p
+        k>>=1;
+        a=(LL)a*a%p;          //注意%p
+    }
+    return res;
+}
+int x,n;
+int main(){
+    cin>>x>>n;
+    //快速计算出x的n次方的结果 
+    cout<<qmi(x,n,233333);
+    return 0;
+}
+```
+
+### 前缀和与差分
+##### 一维前缀和
+###### 示例 1：求最长平衡串长度
+```cpp
+#include<bits/stdc++.h>
+//输入格式:
+//输入一行字符串，保证字符串中只包含字符LQ
+//输出格式:
+//输出一个整数，为输入字符串中最长平衡串的长度。
+using namespace std;
+const int N = 1005;
+int prefix[N];
+
+int main(){
+    string s;cin>>s;
+    for(int i=0;i<s.length();i++)
+    {
+        prefix[i] = prefix[i-1] + (s[i]=='L'?1:-1);
+    }
+
+    int ans=0;
+    for(int i=0;i<s.size();i++)
+        for(int j=i;j<s.size();j++)
+            if(prefix[j]-prefix[i-1]==0) ans = max(ans,j-i+1);
+
+    cout<<ans;
+    return 0;
+}
+```
+
+###### 示例 2：计算区间内数的指定次幂和
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const ll X = 1e9+7; 
+const ll N = 100005;
+ll a[6][N];
+ll prefix[6][N];
+
+int main(){
+    int n,m;
+    // 从标准输入读取 n 和 m 的值
+    cin>>n>>m;
+    // 读取第一行的 5 个值，存储在 a[1][1] 到 a[1][5] 中
+    for(int i=1;i<=5;i++)
+    {
+        cin>>a[1][i];
+    }
+    // 计算每个数的 1 到 5 次幂，并计算前缀和
+    for(int i=1;i<=5;i++)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            // 计算 a[1][j] 的 i 次幂，并存储在 a[i][j] 中
+            a[i][j] = pow(a[1][j],i);
+            // 计算前缀和，prefix[i][j] 表示前 j 个数的 i 次幂的和
+            prefix[i][j] = prefix[i][j-1] + a[i][j];
+        }
+    }
+    // 处理 m 次查询
+    while(m--)
+    {
+        int l,r,k;
+        // 从标准输入读取查询的区间 [l, r] 和次幂 k
+        cin>>l>>r>>k;
+        // 计算区间 [l, r] 内所有数的 k 次幂的和，并对 X 取模后输出
+        cout<<(prefix[k][r]-prefix[k][l-1])%X<<endl;
+    }
+    return 0;
+}
+```
+
+###### 示例 3：计算区间和
+```cpp
+#include <iostream>
+using namespace std;
+const int N = 100010;
+int n, m;
+int a[N], s[N];
+
+int main()
+{
+    cin >> n >> m;
+    for (int i = 1; i <= n; ++i)    cin >> a[i];
+    for (int i = 1; i <= n; ++i)    s[i] = s[i - 1] + a[i];
+    
+    while (m -- )
+    {
+        int l, r;
+        cin >> l >> r;
+        cout << s[r] - s[l - 1] << endl;
+    }
+    return 0;
+}
+```
+
+##### 二维前缀和
+###### 示例 1：计算指定矩阵区域和
+```cpp
+#include<iostream>
+using namespace std;
+
+// 定义全局变量 n、m、q
+// n 表示矩阵的行数，m 表示矩阵的列数，q 表示查询的次数
+int n,m,q;
+// 定义二维数组 sum 用于存储二维前缀和
+// 大小为 1010x1010，足够处理一定规模的数据
+long long int sum[1010][1010];
+
+int main(){
+    // 从标准输入读取矩阵的行数 n、列数 m 和查询的次数 q
+    cin>>n>>m>>q;
+
+    // 嵌套循环遍历矩阵的每一个元素
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+            // 定义变量 a 用于临时存储当前输入的矩阵元素值
+            int a;
+            // 从标准输入读取当前位置的矩阵元素值
+            cin>>a;
+            // 计算二维前缀和并存储到 sum[i][j] 中
+            // sum[i-1][j] 表示上方区域的前缀和
+            // sum[i][j-1] 表示左方区域的前缀和
+            // sum[i-1][j-1] 表示左上角区域的前缀和，由于在前面两项中被重复计算，所以要减去
+            // a 是当前位置的元素值
+            sum[i][j] = sum[i-1][j]+sum[i][j-1]-sum[i-1][j-1]+a;  
+        }
+    }
+
+    // 处理 q 次查询
+    while(q--){
+        // 定义四个变量 x1、y1、x2、y2 用于表示查询的子矩阵的左上角和右下角坐标
+        int x1,y1,x2,y2;
+        // 从标准输入读取查询子矩阵的左上角 (x1, y1) 和右下角 (x2, y2) 坐标
+        cin>>x1>>y1>>x2>>y2;
+        // 计算并输出查询子矩阵的元素和
+        // sum[x2][y2] 表示从矩阵左上角到 (x2, y2) 的所有元素和
+        // sum[x2][y1-1] 表示从矩阵左上角到 (x2, y1 - 1) 的所有元素和，要减去它
+        // sum[x1-1][y2] 表示从矩阵左上角到 (x1 - 1, y2) 的所有元素和，要减去它
+        // sum[x1-1][y1-1] 由于在前面两项中被多减了一次，所以要加回来
+        cout<<sum[x2][y2] - sum[x2][y1-1] - sum[x1-1][y2] + sum[x1-1][y1-1]<<endl;
+    }
+    // 程序正常结束，返回 0
+    return 0;
+}
+```
+
+###### 示例 2：处理多个子矩阵和查询
+```cpp
+#include <iostream>
+using namespace std;
+
+// 定义常量 N 作为二维数组的最大边长
+const int N = 1010;
+// n 为矩阵的行数，m 为矩阵的列数，q 为查询的次数
+int n, m, q;
+// 数组 a 存储原始矩阵元素，数组 s 存储二维前缀和
+int a[N][N], s[N][N];
+
+int main()
+{
+    cin >> n >> m >> q;
+
+    // 读取矩阵 a 的元素
+    for (int i = 1; i <= n; ++i)
+        for (int j = 1; j <= m; ++j)
+            cin >> a[i][j];
+
+    // 计算二维前缀和数组 s
+    for (int i = 1; i <= n; ++i)
+        for (int j = 1; j <= m; ++j)
+            s[i][j] = s[i][j - 1] + s[i - 1][j] - s[i - 1][j - 1] + a[i][j];
+
+    // 处理 q 次查询
+    while (q -- )
+    {
+        int x1, y1, x2, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+        cout << s[x2][y2] - s[x2][y1 - 1] - s[x1 - 1][y2] + s[x1 - 1][y1 - 1] << endl;
+    }
+    return 0;
+}
+```
+##### 一维差分
+###### 示例 1：差分数组操作模板
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5;
+int diff[N];//差分数组  
+
+void CF(int l,int r,int x)
+{
+    diff[l] += x;
+    diff[r+1] -= x;
+}
+
+int main(){
+    ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+    int n,m;cin>>n>>m;
+
+    int a[n+1]={0};
+    for(int i=1;i<=n;i++) cin>>a[i];
+
+    //对原数组进行差分构造差分数组 
+    for(int i=1;i<=n;i++) diff[i] = a[i] - a[i-1];
+
+    //对原数组x-y区间进行运算之后存在差分数组当中 
+    while(m--)
+    {
+        int x,y,z;cin>>x>>y>>z;
+        CF(x,y,z);
+    }
+
+    //对差分数组求前缀和得到经过操作q次之后的数组结果
+    for(int i=1;i<=n;i++)
+    {
+        diff[i] += diff[i-1];
+        cout<<diff[i]<<" ";
+    }
+    return 0;
+}
+```
+
+###### 示例 2：区间操作后输出序列
+```cpp
+#include <iostream>
+using namespace std;
+
+// 定义数组最大长度
+const int N = 100010;
+// n 为数组长度，m 为操作次数
+int n, m;
+// 数组 a 存储原始数组及最终结果，数组 b 存储差分数组
+int a[N], b[N];
+
+// 对差分数组进行区间修改操作
+// l 为区间左端点，r 为区间右端点，c 为要增加的值
+void insert(int l, int r, int c)
+{
+    b[l] += c;
+    b[r + 1] -= c;
+}
+
+int main()
+{
+    cin >> n >> m;
+
+    // 输入原始数组 a 的元素
+    for (int i = 1; i <= n; ++i)    cin >> a[i];
+    // 根据原始数组初始化差分数组 b
+    for (int i = 1; i <= n; ++i)    insert(i, i, a[i]);
+
+    // 处理 m 次区间修改操作
+    while (m -- )
+    {
+        int l, r, c;
+        cin >> l >> r >> c;
+        insert(l, r, c);
+    }
+
+    // 通过差分数组还原得到修改后的数组 a
+    for (int i = 1; i <= n; ++i)    a[i] = a[i - 1] + b[i];
+    // 输出修改后的数组 a 的元素
+    for (int i = 1; i <= n; ++i)    cout << a[i] << ' ';
+
+    return 0;
+}
+```
+
+##### 二维差分
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+// 定义数组 a 存储原矩阵，数组 s 存储差分数组，n 为行数，m 为列数，q 为操作次数
+int a[1005][1005], s[1005][1005], n, m, q;
+
+// 对差分数组进行区间修改
+void insert_num(int x1, int y1, int x2, int y2, int c) {
+    s[x1][y1] += c;
+    s[x2 + 1][y1] -= c;
+    s[x1][y2 + 1] -= c;
+    s[x2 + 1][y2 + 1] += c;
+}
+
+int main() {
+    // 输入矩阵的行数、列数和操作次数
+    cin >> n >> m >> q;
+    // 输入矩阵元素并初始化差分数组
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            cin >> a[i][j];
+            insert_num(i, j, i, j, a[i][j]);
+        }
+    }
+    // 处理 q 次区间修改操作
+    while (q--) {
+        int x1, y1, x2, y2, c;
+        cin >> x1 >> y1 >> x2 >> y2 >> c;
+        insert_num(x1, y1, x2, y2, c);
+    }
+    // 从差分数组还原出修改后的矩阵并输出
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
+            s[i][j] += s[i - 1][j] + s[i][j - 1] - s[i - 1][j - 1];
+            cout << s[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+```
+
+### 双指针
+###### 双指针判断回文串
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5+9;
+char s[N]; 
+
+int main(){
+    cin>>s+1;
+    int n = strlen(s+1);
+    int l = 1;
+    int r = n;
+    bool flag = true;
+    while(l<r && flag)
+    {
+        if(s[l]!=s[r]) flag = false;
+        l++;
+        r--;
+    }
+    cout<<(flag?"Y":"N");
+    return 0;
+}
+```
+
+###### 最长无重复子数组
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+map<char, int> mp;
+
+int main() {
+    int n;
+    cin >> n;
+    string s;
+    for (int i = 1; i <= n; i++) {
+        char s_;
+        cin >> s_;
+        s += s_;
+    }
+
+    int ans = 0;
+    for (int r = 0, l = 0; r < s.size(); r++) {
+        mp[s[r]]++;
+        while (mp[s[r]] >= 2) {
+            mp[s[l]]--;
+            l++;
+        }
+        ans = max(ans, r - l + 1);
+    }
+    cout << ans;
+    return 0;
+}
+```
+
+###### 两数之和
+```cpp
+#include <iostream>
+using namespace std;
+
+const int N = 100010;
+int n, m, x;
+int a[N], b[N];
+
+int main()
+{
+    cin >> n >> m >> x;
+    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < m; ++i) cin >> b[i];
+
+    for (int i = 0, j = m - 1; i < n; ++i)
+    {
+        while (a[i] + b[j] > x) -- j;
+        if (a[i] + b[j] == x)
+        {
+            cout << i << ' ' << j << endl;
+            break;
+        }
+    }
+    return 0;
+}
+```
+
+###### 子序列判断
+```cpp
+#include <iostream>
+using namespace std;
+
+const int N = 100010;
+int n, m;
+int a[N], b[N];
+
+int main()
+{
+    cin >> n >> m;
+    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < m; ++i) cin >> b[i];
+
+    int i = 0;
+    for (int j = 0; j < m; ++j)
+        if (i < n && a[i] == b[j])
+            ++i;
+
+    if (i == n)
+        puts("Yes");
+    else
+        puts("No");
+
+    return 0;
+}
+```
+
+### 进制转换
+##### 其他进制转十进制
+```cpp
+int ntoten(string s, int n) {
+    int ans = 0;
+    for (int i = 0; i < s.size(); i++) {
+        ans = ans * n + s[i] - '0';
+    }
+    return ans;
+}
+
+int ntoten(int a[], int num, int n) {
+    int ans = 0;
+    for (int i = 0; i < num; i++) {
+        ans = ans * n + a[i];
+    }
+}
+```
+
+##### 进制比较
+```cpp
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+
+typedef long long LL;
+const int N = 15;
+int x[N], y[N];
+int n, bx, m, by;
+
+LL ntoten(int a[], int num, int n) {
+    LL res = 0;
+    for (int i = 0; i < num; i++) {
+        res = res * n + a[i];
+    }
+    return res;
+}
+
+int main() {
+    cin >> n >> bx;
+    for (int i = 0; i < n; i++) cin >> x[i];
+    cin >> m >> by;
+    for (int i = 0; i < m; i++) cin >> y[i];
+
+    LL xs = ntoten(x, n, bx), ys = ntoten(y, m, by);
+    if (xs < ys) cout << '<';
+    else if (xs > ys) cout << '>';
+    else cout << '=';
+    return 0;
+}
+```
+
+##### 十进制转其他进制
+```cpp
+void tenton(int nums, int n) {
+    stack<int> s;
+    while (nums) {
+        s.push(nums % n);
+        nums /= n;
+    }
+    while (!s.empty()) {
+        cout << s.top();
+        s.pop();
+    }
+}
+
+int a[N];
+void tenton(int nums, int n) {
+    int cnt = 0;
+    while (nums) {
+        a[cnt++] = nums % n;
+        nums /= n;
+    }
+    reverse(a, a + cnt);
+    for (int i = 0; i < cnt; i++) cout << a[i];
+}
+```
+
+##### 进制转换综合
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+const int N = 1005;
+using ll = long long;
+int a[N];
+char ch[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+
+void solve() {
+    int N, M;
+    cin >> N >> M;
+    string s;
+    cin >> s;
+
+    int len = s.length();
+    for (int i = 0; i < len; i++) {
+        if (s[i] >= '0' && s[i] <= '9') a[i] = s[i] - '0';
+        else a[i] = s[i] - 'A' + 10;
+    }
+
+    ll x = 0;
+    for (int i = 0; i < len; i++) {
+        x = x * N + a[i];
+    }
+
+    string ans;
+    while (x) {
+        ans += ch[x % M];
+        x /= M;
+    }
+    reverse(ans.begin(), ans.end());
+    cout << ans << endl;
+}
+
+int main() {
+    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
+    return 0;
+}
+```
