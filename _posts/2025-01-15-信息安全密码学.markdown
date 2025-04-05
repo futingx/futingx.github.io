@@ -11,7 +11,7 @@ author: FTX
 ##### 密码学引论（第四版）
 丛书： 普通高等教育“十一五”国家级规划教材
 ##### 作者：张焕国，唐明
-该课程是我在学习密码学引论第四版的一些心得和学习方法，本人亲自录制，适合期末考试速通选手。第一次录课，有诸多话语不顺，陷望大家理解，感谢大家的支持！！！
+该课程是我在学习密码学引论第四版的一些心得和学习方法(本人该课程期末GPA=3.9/4.0)，本人亲自录制，适合期末考试速通选手。第一次录课，存在诸多话语不顺，望各位同僚理解，感谢大家的支持！！！
 <br>
 ##### 课程链接:[https://www.bilibili.com/video/BV1xn9gYmE9Q/?spm_id_from=333.1387.homepage.video_card.click](https://www.bilibili.com/video/BV1xn9gYmE9Q/?spm_id_from=333.1387.homepage.video_card.click)
 
