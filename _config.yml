@@ -6,21 +6,21 @@
 
 # Site settings
 title: DHappy
-brief-intro: 求神拜佛 不如本事在身
+brief-intro: 上岸没有尽头 你接受了那就是岸
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://futingx.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
 # other links
-twitter_username: 暂无
-facebook_username: futingxi
+# twitter_username: 暂无
+# facebook_username: futingxi
 github_username:  futingx
 email: 20031124f@gmail.com
-weibo_username: 四喜丸子
-zhihu_username: futingxi
-linkedIn_username: 暂无
-dribbble_username: 暂无
+#weibo_username: 四喜丸子
+#zhihu_username: futingxi
+#linkedIn_username: 暂无
+#dribbble_username: 暂无
 
 description_footer: 本站记录我的七七八八的编程之旅沿途风景！
 
