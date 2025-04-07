@@ -13,9 +13,10 @@ author: FTX
 ##### 以下是我在本科学习期间参加程序设计竞赛时期所学习的一些基础程序设计算法，在每一个具体的算法当中我会给你一个模板，并且举一些相应的例子来帮助你理解这些算法，具体应用还是需要你自己多实践，多总结！！！
 - [数论](#数论)
 - [前缀和与差分](#前缀和与差分)
+- [二分](#二分)
 - [双指针](#双指针)
 - [进制转换](#进制转换)
-
+- [矩阵](#矩阵)
 
 
 
@@ -66,75 +67,78 @@ int main() {
 ```
 ##### 唯一分解定理
 ```cpp
-#include<bits/stdc++.h> 
+#include<bits/stdc++.h>
+// 使用标准命名空间，这样在使用标准库中的类和函数时无需加std::前缀
 using namespace std;
+// 定义一个整数变量n，用于存储待分解质因数的数
+int n;
+// 定义一个整数类型的向量a，用于存储分解得到的质因数
+vector<int> a;
 
-// 函数用于找出一个数的所有质因数
-// 参数 n 是要分解质因数的目标整数
-// 参数 factors 是一个整数向量的引用，用于存储找到的质因数
-void primeFactors(int n, vector<int>& factors) {
-    // 从最小的质数 2 开始尝试分解 n
-    // 循环条件 i * i <= n 保证我们只需要检查到 n 的平方根
-    for (int i = 2; i <= sqrt(n); i++) {
-        // 当 n 能被 i 整除时
-        while (n % i == 0) {
-            // 将 i 作为质因数添加到 factors 向量中
-            factors.push_back(i);
-            // 将 n 除以 i，更新 n 的值，继续寻找其他质因数
+// 主函数，程序的入口点
+signed main(){
+    // 从标准输入读取一个整数n
+    cin>>n;
+
+    // 从2开始到根号n进行遍历，寻找n的质因数
+    // 因为如果一个数n有大于根号n的因数，那么必然有小于根号n的因数与之对应
+    for(int i = 2; i <= sqrt(n); i++)
+    {
+        // 当n能被i整除时，将i添加到向量a中，并将n除以i
+        // 持续进行这个操作，直到n不能再被i整除为止
+        while(n % i == 0)
+        {
+            // 将质因数i添加到向量a中
+            a.push_back(i);
+            // n除以i，继续对商进行质因数分解
             n /= i;
         }
     }
-    // 如果经过上面的循环后，n 仍然大于 1，说明 n 本身是一个质数
-    // 将这个质数添加到 factors 向量中
-    if (n > 1) {
-        factors.push_back(n);
-    }
-}
 
-int main() {
-    int number;
-    cout << "请输入一个正整数: ";
-    cin >> number;
+    // 如果经过上述循环后，n仍然大于1，说明n本身是一个质数
+    // 因为如果n能被完全分解为小于等于根号n的质因数，那么最后n会变为1
+    if(n > 1) a.push_back(n);
 
-    // 定义一个整数向量 result，用于存储找到的质因数
-    vector<int> result;
-    // 调用 primeFactors 函数，将 number 的质因数存储到 result 向量中
-    primeFactors(number, result);
+    // 遍历向量a，输出所有的质因数
+    for(auto &it : a) cout << it << " ";
 
-    // 输出提示信息，表明接下来要输出该数的质因数
-    cout << number << " 的所有质因数是: ";
-    // 遍历存储质因数的向量 result
-    for (int i = 0; i < result.size(); ++i) {
-        cout << result[i];
-        // 如果不是最后一个质因数，输出一个空格进行分隔
-        if (i < result.size() - 1) {
-            cout << " ";
-        }
-    }
+    // 程序正常结束，返回0
     return 0;
-} 
+}
 ```
 ##### 快速幂
 ```cpp
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
-typedef long long LL;
-//快速幂模板，返回a^k%p的结果
-int qmi(int a,int k,int p){
-    LL res=1%p;          //注意%p
-    while(k){
-        if(k&1) res=res*a%p;  //注意%p
-        k>>=1;
-        a=(LL)a*a%p;          //注意%p
+int x,n;
+#define int long long
+
+const int p = 233333;
+
+// 快速幂函数，用于计算x的n次幂对p取模的结果
+int qmi(int x, int n)
+{
+    // 初始化结果为1对p取模，防止出现负数情况
+    int res = 1 % p;
+    // 当指数n不为0时，继续循环
+    while (n)
+    {
+        // 如果n的二进制表示的最低位为1，说明当前位需要参与计算
+        if (n & 1)
+            res *= x % p;
+        // 将指数n右移一位，相当于除以2
+        n /= 2;
+        // 更新底数x为x的平方对p取模的结果
+        x = (int)x * x % p;
     }
+    // 返回最终结果
     return res;
 }
-int x,n;
-int main(){
-    cin>>x>>n;
-    //快速计算出x的n次方的结果 
-    cout<<qmi(x,n,233333);
-    return 0;
+	
+signed main(){
+	cin>>x>>n;
+	cout<<qmi(x,n);
+	return 0;
 }
 ```
 
@@ -452,6 +456,9 @@ int main() {
     return 0;
 }
 ```
+### 二分
+###### 示例 1：求最长平衡串长度
+
 
 ### 双指针
 ###### 双指针判断回文串
@@ -690,4 +697,54 @@ int main() {
     }
     return 0;
 }
+```
+
+### 矩阵
+##### 矩阵
+![矩阵重塑02](../images/img.png)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e4+10;
+int arr[N];
+int arr1[N];//记录转置之后的数组 
+int main(){
+	int n,m,t;cin>>n>>m>>t;
+	for(int i=0;i<n*m;i++) cin>>arr[i];
+	
+	int op,n1=n,m1=m,a,b;
+	while(t--)
+	{
+		cin>>op>>a>>b;
+		//重塑不改变一维数组的序列
+		if(op==1)
+		{
+			n1 = a;
+			m1 = b;
+		}
+		
+		//转置 注意二维转一维的公式
+		else if(op==2)
+		{
+			for(int i=1;i<n*m;i++)
+			{
+				arr1[(i%m1)*n1+i/m1] = arr[i]; 
+			}
+			for(int i=1;i<n*m;i++)
+			{
+				arr[i] = arr1[i];//把转置之后的数组arr1赋值回arr 
+			}
+			
+			//记得行列交换方便op==3查询不出错
+			int temp = n1;
+			n1 = m1;
+			m1 = temp; 
+		}
+		
+		//查询 
+		else cout<<arr[a*m1+b]<<endl;
+	}
+  return 0;
+}
+
 ```
