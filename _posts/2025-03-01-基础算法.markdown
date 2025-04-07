@@ -457,8 +457,161 @@ int main() {
 }
 ```
 ### 二分
-###### 示例 1：求最长平衡串长度
+###### [P2249 【深基13.例1】查找](https://www.luogu.com.cn/problem/P2249)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e6+10;
+ 
+int a[N];
+int n,m;
+int x;
 
+bool check(int mid)
+{
+	if(a[mid]<x) return true;
+	else return false;
+}
+int main(){
+	cin>>n>>m;
+	for(int i=1;i<=n;i++) cin>>a[i];
+	
+	while(m--)
+	{
+		cin>>x;
+		
+		int l=0,r = n+1;
+		while(l+1<r)
+		{
+			int mid = (l+r)/2;
+			if(check(mid)) l = mid;
+			else r = mid;
+		}
+		if(a[r]==x) cout<<r<<" ";
+		else cout<<"-1"<<" ";
+	}
+  return 0;
+}
+```
+
+###### [P1102 A-B 数对](https://www.luogu.com.cn/problem/P1102)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 2*1e5 + 10;
+int a[N];
+int main(){
+	int n,c;cin>>n>>c;
+	
+	for(int i=1;i<=n;i++) cin>>a[i];
+	int ans=0;
+	sort(a+1,a+n+1);
+	int A = 1,B = 1;
+	while(A<=n && B<=n)
+	{
+		if(a[A]-a[B] >= c)
+		{
+			if(a[A]-a[B]==c) ans++;
+			B++;
+		} 
+		else A++;
+	}
+	cout<<ans;
+  return 0;
+}
+
+```
+
+###### [P1873 [COCI 2011/2012 #5] EKO / 砍树](https://www.luogu.com.cn/problem/P1873)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e6+10;
+int a[N];
+
+int n,need,mx;
+
+#define int long long
+bool check(int mid)
+{
+	int sum = 0;
+	for(int i=1;i<=n;i++)
+	{
+		sum += max(0LL,a[i]-mid);
+	}
+	if(sum>=need) return true;
+	else return false;
+}
+signed main(){
+	cin>>n>>need;
+	
+	for(int i=1;i<=n;i++)
+	{
+		cin>>a[i];
+		mx = max(mx,a[i]);
+	}
+	
+	int l = 0, r = mx;
+	
+	while(l+1<r)
+	{
+		int mid = (l+r)/2;
+		if(check(mid))
+		{
+			l = mid;
+		}
+		else r = mid;
+	}
+	cout<<l;
+	
+  return 0;
+}
+```
+###### [P2440 木材加工](https://www.luogu.com.cn/problem/P2440)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5+10;
+int a[N];
+int n,k,mx;
+int res;//记录查找到的答案 
+bool check(int x)
+{
+	int sum = 0;
+	for(int i=1;i<=n;i++)
+	{
+		sum += a[i]/x;//n个圆木可以切割成的总段数 
+		if(sum>=k) return true; //满足条件的blue放在左边 
+	}
+	return false;
+}
+int main(){
+	cin>>n>>k;
+	
+	mx = 0;
+	for(int i=1;i<=n;i++) 
+	{
+		cin>>a[i];
+		mx = max(mx,a[i]);
+	}
+	
+	int l = 0,r = mx+1;
+	
+	while(l+1<r)
+	{
+		int mid = (l+r)/2;
+		if(check(mid))
+		{
+			l = mid;
+		}
+		else r = mid;
+	}
+	
+	cout<<l;//输出分界线坐标满足条件的最优解 
+  return 0;
+}
+
+```
 
 ### 双指针
 ###### 双指针判断回文串
