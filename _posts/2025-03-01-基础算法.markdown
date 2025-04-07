@@ -701,7 +701,7 @@ int main() {
 
 ### 矩阵
 ##### 矩阵
-![矩阵重塑02](../images/img.png)
+![矩阵重塑02](..\images\img.png)
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
