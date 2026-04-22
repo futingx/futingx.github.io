@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "YOLOv11：搭建可视化目标检测系统"
-categories: YOLOv11：搭建可视化目标检测系统
+categories: YOLOv11
 tags:  YOLOv11：搭建可视化目标检测系统
 author: FTX
 ---
