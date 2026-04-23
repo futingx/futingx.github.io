@@ -10,7 +10,8 @@ brief-intro: 上岸没有尽头 你接受了那就是岸
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://futingx.github.io" # the base hostname & protocol for your site
 
-permalink: /:year/:month/:day/:title/
+#permalink: /:year/:month/:day/:title/
+permalink: /:title/
 
 # other links
 # twitter_username: 暂无
