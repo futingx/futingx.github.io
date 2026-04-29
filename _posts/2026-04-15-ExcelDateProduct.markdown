@@ -1,3 +1,6 @@
+---
+layout: post
+title:  "AI大模型处理文档"
 categories: Word
 tags:  Word
 author: FTX
