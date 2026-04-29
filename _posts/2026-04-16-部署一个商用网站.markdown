@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "网页上线部署"
+title:  "一个商用网页上线部署流程"
 categories: Website Build
 tags:  Website Build
 author: FTX
@@ -9,7 +9,7 @@ author: FTX
 * content
 {:toc}
 
-# 🌐 阿里云域名购买与建站全流程笔记
+# 🌐 阿里云域名 + 服务器购买与建站全流程笔记
 
 > 📝 **个人博客笔记**
 > 参考来源：[CSDN - 秃了也弱了](https://blog.csdn.net/A_art_xiang/article/details/142630829)
