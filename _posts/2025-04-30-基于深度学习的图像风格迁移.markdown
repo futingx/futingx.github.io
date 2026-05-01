@@ -12,4 +12,4 @@ author: FTX
 ##### 目前我已经将该项目开源，欢迎大家参考使用。图片如有侵权请联系作者删除。
 ##### 完整项目网址：目前暂时未公开   
 ![示例图片](/images/deepLearna2b.png)
-![示例图片](/images/deepLearnb2a.png)
+![示例图片](/images/deeplearnb2a.png)
