@@ -20,7 +20,7 @@ author: FTX
 
 
 ## 核心思路
-![HTMLtoWord](../2026/04/01/images/HTMLtoWord.png)
+![HTMLtoWord](/images/HTMLtoWord.png)
 
 通过 HTML 格式代码，在浏览器中渲染页面后下载为 `.doc` 或 `.xls` 文件，用 Office 打开即可保持格式。
 
