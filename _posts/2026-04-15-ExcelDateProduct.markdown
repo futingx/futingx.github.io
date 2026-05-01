@@ -11,6 +11,7 @@ author: FTX
 # WPS AI 大模型处理 Excel 表格数据实战指南
 
 > **前言**：本文介绍的方法无需 WPS 会员，通过 WPS 内置的 AI 大模型即可实现 Excel 数据处理功能。
+![图片实例](/images/ExcelDataProcess.png)
 
 ---
 ## 一、适用场景

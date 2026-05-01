@@ -14,14 +14,13 @@ author: FTX
 > 本文记录如何借助大模型生成 HTML 格式代码，变相导出符合 Word 或 Excel 格式要求的文档。
 
 ---
+![HTMLtoWord](/images/HTMLtoWord.png)
 
 
 
 
 
 ## 核心思路
-![HTMLtoWord](/images/HTMLtoWord.png)
-
 通过 HTML 格式代码，在浏览器中渲染页面后下载为 `.doc` 或 `.xls` 文件，用 Office 打开即可保持格式。
 
 ---

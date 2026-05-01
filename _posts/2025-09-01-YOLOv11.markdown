@@ -11,6 +11,7 @@ author: FTX
 
 # 跟着工程师学 YOLOv11：从 0 到 1 搭建可视化目标检测系统（附新手避坑指南）
 项目源地址：[基于yolov11的图像及视频检测系统](https://github.com/futingx/Image-and-video-detection-system-based-on-yolov11.git)
+![示例图片](/images/yolov11.jpg)
 
 
 
