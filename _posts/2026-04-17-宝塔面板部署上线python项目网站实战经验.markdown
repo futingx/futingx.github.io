@@ -11,6 +11,7 @@ author: FTX
 # 个人博客操作指南
 这个项目是我个人为了进行宝塔面板部署Python项目网站操作的一个实战项目，当然你也可以拉取作为你自己的一个项目进行修改优化，我已经不在进行优化。这个项目不涉及后端处理，仅是一个轻量化的框架结合md文档格式进行博客发布攥写等等功能。
 > 基于 Flask + Markdown 的漫威风格个人博客
+项目源地址：[https://github.com/futingx/blog-website-built-with-Python-Flask](https://github.com/futingx/blog-website-built-with-Python-Flask)
 
 ---
 
