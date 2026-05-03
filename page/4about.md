@@ -69,6 +69,7 @@ type: page
 
 - 📖 大学英语六级（CET-6）：451分
 - 🎤 普通话二级乙等
+![六级](../images/cet6.png)
 
 ### 技术能力
 
@@ -200,7 +201,6 @@ type: page
 
 # 📸 证书展示
 
-![六级](../images/cet6.png)
 ![蓝桥杯](../images/蓝桥杯.png)
 ![计算机设计大赛](../images/计算机设计大赛.png)
 ![百度之星](../images/百度之心.png)
