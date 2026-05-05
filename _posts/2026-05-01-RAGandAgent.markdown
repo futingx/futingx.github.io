@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "AI领域四大件"
+title:  "大模型应用开发"
 categories: AI
 tags:  AI
 author: FTX
