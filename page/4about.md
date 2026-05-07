@@ -16,7 +16,7 @@ type: page
 > YMU计算机科学与技术专业2026届本科生 · 中共党员  
 > 综测连续两年稳居年级前5%
 
-![个人头像](../images/avatar.jpg)
+> ![个人头像](../images/avatar01.png)
 
 ---
 
