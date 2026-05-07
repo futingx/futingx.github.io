@@ -1,0 +1,347 @@
+---
+layout: post
+title:  "agent项目实战"
+categories: AI
+tags:  AI
+author: FTX
+---
+
+* content
+{:toc}
+
+---
+# 🤖 从客服到"管家"
+
+## 我给扫地机器人做了个能自己查资料、生成报告的智能体
+
+---
+
+> *"真正 Agent 应该能做更多的事情——它应该能自主判断需要什么信息，自己去查，自己生成结果，而不是等着用户一步步喂问题。"*
+
+---
+
+
+
+
+
+做完 RAG 客服系统之后，我一直想一个问题：**如果 Agent 只能回答问题，那跟普通的 RAG 问答有什么区别？**
+
+正好最近在学一个课程关于扫地机器人的业务，我就花了点时间做了这个智能体项目：
+
+```
+✅ 用户问保养问题 → 它能自己查知识库
+✅ 用户要月度报告 → 它自己调接口、拿数据、写报告
+```
+
+做到最后，基本实现了 **"你只管提问，其他我来办"** 的体验。
+
+---
+
+## 📋 需求分析
+
+### Agent 应该能做两件事
+
+| 场景 | 能力要求 | 复杂度 |
+|:---:|:---|:---:|
+| 回答专业问题 | 用户问保养、选型号、故障处理 → 结合专业知识库回答 | ⭐⭐ RAG + 模型生成 |
+| 生成使用报告 | 拿用户ID → 拿月份 → 调接口 → 生成 report 格式回复 | ⭐⭐⭐⭐⭐ 多轮工具调用 |
+
+> 这两个场景的复杂度完全不同。第一个只是 RAG + 模型生成，第二个需要多轮工具调用 + 动态切换提示词。
+
+---
+
+## 🏗️ 整体架构
+
+项目目录结构是这样的：
+
+```
+agent智能体开发最终/
+├── config/                ⚙️ 配置文件
+│   ├── agent.yml         # Agent 相关配置（外部数据路径等）
+│   ├── chroma.yml        # 向量库配置
+│   ├── rag.yml          # 模型配置
+│   └── prompts.yml      # 提示词路径映射
+├── prompts/              📝 提示词文件
+│   ├── main_prompt.txt          # Agent 主提示词
+│   ├── rag_summarize.txt        # RAG 总结提示词
+│   └── report_prompt.txt        # 报告生成提示词
+├── rag/                  🔍 RAG 服务
+│   ├── vector_store.py           # 向量库服务
+│   └── rag_service.py           # 总结服务
+├── model/                🧠 模型工厂
+│   └── factory.py               # 聊天模型 + 嵌入模型
+├── agent/                ⚡ Agent 核心
+│   ├── react_agent.py          # Agent 主类
+│   └── tools/
+│       ├── agent_tools.py      # 工具定义
+│       └── middleware.py       # 中间件
+└── app.py                 💻 Streamlit 前端
+```
+
+> 配置和代码分离、提示词外置、模块边界清晰，这套结构在项目复杂度上升之后非常重要。
+
+---
+
+## 一、📚 知识库怎么建
+
+向量库部分跟之前的 RAG 项目差不多，使用 **Chroma + text-embedding-v4**。
+
+```python
+# vector_store.py
+self.vector_store = Chroma(
+    collection_name="agent",
+    embedding_function=embed_model,
+    persist_directory="./chroma_db",
+)
+
+self.spliter = RecursiveCharacterTextSplitter(
+    chunk_size=200,      # 这里设小一点
+    chunk_overlap=20,
+    separators=["\n\n", "\n", ".", ...],
+)
+```
+
+### 分块策略调整
+
+| 参数 | 之前 | 现在 | 原因 |
+|:---|:---:|:---:|:---|
+| chunk_size | 1000 | 200 | 智能体的问题通常很短很具体 |
+| chunk_overlap | 100 | 20 | 不需要太多重叠 |
+
+> 段落切得细一些，检索命中率更高。
+
+### 数据来源
+
+- `扫拖一体机器人100问.txt`
+- `选购指南.txt`
+
+---
+
+## 二、🛠️ 工具怎么定义
+
+这是 Agent 最核心的部分。我定义了 **7 个工具**，覆盖不同场景：
+
+| 工具 | 用途 | 入参 |
+|:---|:---|:---|
+| `rag_summarize` | 从向量库检索专业知识 | query |
+| `get_weather` | 获取指定城市天气，辅助判断环境适配 | city |
+| `get_user_location` | 拿到用户所在城市 | 无 |
+| `get_user_id` | 拿到用户 ID | 无 |
+| `get_current_month` | 拿到当前月份 | 无 |
+| `fetch_external_data` | 从 CSV 文件拉取用户使用数据 | user_id, month |
+| `fill_context_for_report` | 标记进入报告生成流程 | 无 |
+
+> 使用 LangChain 的 `@tool` 装饰器来定义。**description 写清楚很重要**——模型会根据这个来判断要不要调用这个工具、怎么传参。
+
+```python
+# agent_tools.py
+@tool(description="从向量存储中检索参考资料")
+def rag_summarize(query: str) -> str:
+    return rag.rag_summarize(query)
+
+
+@tool(description="获取指定城市的天气")
+def get_weather(city: str) -> str:
+    return f"城市{city}天气为晴天，气温26摄氏度..."
+
+
+@tool(description="获取用户所在城市的名称")
+def get_user_location() -> str:
+    return random.choice(["深圳", "合肥", "杭州"])
+```
+
+### CSV 数据结构
+
+```csv
+user_id,特征,效率,耗材,对比,时间
+1001,双边扫,90%,正常,比上月提升5%,2025-01
+```
+
+> 读到内存里是 `external_data[user_id][month]`，查询时用两个 key 直接拿。
+
+---
+
+## 三、🚦 中间件：Agent 的"交警"
+
+中间件是我在这个项目里加的一个比较有意思的设计。它在模型和工具之间插了一脚：
+
+### 功能一：工具执行监控
+
+每次调用工具时，打印日志记录调用了什么、传了什么参数。
+
+### 功能二：动态切换提示词（关键）
+
+正常情况下，Agent 用的是 `main_prompt.txt` 里的提示词。但用户要生成报告时，提示词需要换成 `report_prompt.txt`。
+
+**实现方案：**
+
+```python
+# middleware.py
+@dynamic_prompt
+def report_prompt_switch(request: ModelRequest):
+    is_report = request.runtime.context.get("report", False)
+    if is_report:
+        return load_report_prompts()
+    return load_system_prompts()
+```
+
+### 工作原理
+
+```
+用户说"生成报告"
+        │
+        ▼
+Agent 调用 fill_context_for_report 工具
+        │
+        ▼
+中间件将 context["report"] 设为 True
+        │
+        ▼
+下一次模型请求时自动切换到 report_prompt.txt
+        │
+        ▼
+模型输出 Markdown 格式的 report
+```
+
+> 这个设计解决了一个问题：**如何让模型自己判断应该用什么格式回复**。整个过程不需要外部代码介入。
+
+---
+
+## 四、⚡ Agent 主链路怎么跑
+
+```python
+# react_agent.py
+class ReactAgent:
+    def __init__(self):
+        self.llm = chat_model.generator()  # 必须调用 generator() 生成实例
+
+        self.agent = create_agent(
+            model=self.llm,
+            system_prompt=load_system_prompts(),
+            tools=[
+                rag_summarize,
+                get_weather,
+                get_user_location,
+                get_user_id,
+                get_current_month,
+                fetch_external_data,
+                fill_context_for_report
+            ],
+            middleware=[monitor_tool, log_before_model, report_prompt_switch],
+        )
+
+    def execute_stream(self, query: str):
+        for chunk in self.agent.stream(
+            {"messages": [{"role": "user", "content": query}]},
+            stream_mode="values",
+            context={"report": False}
+        ):
+            yield chunk["messages"][-1].content.strip()
+```
+
+### 主提示词设计
+
+```
+思考 → 行动 → 观察 → 再思考
+```
+
+> 每次工具调用前，模型需要先输出自然语言的思考过程，说明为什么要调用这个工具、调用了能获取什么信息。
+
+### ⚠️ 小坑记录
+
+`create_agent` 需要的是模型**实例**，不是工厂类。直接传工厂类会报类型错误。
+
+---
+
+## 五、💡 一个完整的例子
+
+**用户问：** *"生成我的6月使用报告"*
+
+### 模型思考过程
+
+```
+Step 1: 用户要的是报告，需要调用 fill_context_for_report
+Step 2: 需要用户 ID 和月份，调用 get_user_id
+Step 3: 拿到用户 ID = "1001"，月份 = "2025-06"
+Step 4: 调用 fetch_external_data(user_id="1001", month="2025-06")
+Step 5: 数据返回：效率90%、耗材正常...
+Step 6: 中间件已把 context["report"] 设为 True，切换到 report_prompt.txt
+Step 7: 生成 Markdown 格式报告
+```
+
+### 生成的报告
+
+```markdown
+# 黑马程序员扫地机器人使用情况报告与保养建议
+
+## 一、设备概况
+您使用的是XX型号扫地机器人...
+
+## 二、6月使用数据
+| 指标 | 数值 |
+|:---:|:---:|
+| 清洁效率 | 90% |
+| 耗材状态 | 正常 |
+| 对比上月 | 提升5% |
+
+## 三、保养建议
+1. ...
+```
+
+> 整个过程模型自主完成工具链编排，用户只需要说一句"生成报告"。
+
+---
+
+## 六、⚠️ 踩过的几个坑
+
+| 坑点 | 问题描述 | 解决方案 |
+|:---:|:---|:---|
+| 模型实例 vs 工厂类 | `chat_model` 是工厂类，必须调用 `generator()` | `chat_model.generator()` |
+| 提示词切换时机 | 关键词判断不稳定 | 用 `fill_context_for_report` 工具触发 |
+| description 写错 | 参数名和函数签名不一致 | description 要和实际函数签名对应 |
+| CSV 空行处理 | 读取时没跳过表头和空行 | `f.readlines()[1:]` 跳过头部 |
+
+---
+
+## 七、📝 总结与后续
+
+这套 Agent 跑通之后，有几个明显的进步：
+
+```
+┌─────────────────────────────────────────────────┐
+│                    Agent 能力升级                │
+├─────────────────────────────────────────────────┤
+│  ✅ 多轮工具调用                                  │
+│     模型自己判断需要什么信息、去调用什么工具       │
+│                                                  │
+│  ✅ 动态提示词                                    │
+│     中间件介入后自动切换回复格式                  │
+│                                                  │
+│  ✅ 外部数据接入                                  │
+│     CSV 数据注入回复，不只依赖知识库              │
+│                                                  │
+│  ✅ 流式输出                                      │
+│     思考过程一步步出来，体验更好                 │
+└─────────────────────────────────────────────────┘
+```
+
+### 后续优化计划
+
+| 方向 | 目标 |
+|:---:|:---|
+| 数据源升级 | CSV → 真实 API |
+| 记忆能力 | 支持多轮对话追问 |
+| 可视化 | 报告增加 ECharts/Matplotlib 图表 |
+| 部署上线 | 接入真实用户画像 |
+
+---
+
+> 做 Agent 最大的感受是：**让模型自己决定做什么，比写死在代码里难很多，但也更有意思。** 工具定义、提示词设计、中间件逻辑，这些都需要反复调试，急性子做不来。但跑通的那一刻，确实比单纯调 API 有成就感得多。
+
+---
+
+*完整代码和配置在 `agent智能体开发最终` 目录下。做智能体方向开发的同学，欢迎交流。*
+
+---
+
+*—— FTX 于 2025*
