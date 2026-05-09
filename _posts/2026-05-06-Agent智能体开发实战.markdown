@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "agent项目实战"
+title:  "Agent项目实战"
 categories: AI
 tags:  AI
 author: FTX
