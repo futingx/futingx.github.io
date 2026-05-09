@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "程序设计基础算法"
-categories: 程序设计基础算法
-tags:  程序设计基础算法
+title:  "程序设计竞赛基础算法"
+categories: 程序设计竞赛基础算法
+tags:  程序设计竞赛基础算法
 author: FTX
 ---
 
