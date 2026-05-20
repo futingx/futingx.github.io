@@ -205,7 +205,6 @@ type: page
 ![计算机设计大赛](../images/计算机设计大赛.png)
 ![百度之星](../images/百度之心.png)
 ![英语](../images/英语.png)
-![计算机设计竞赛](../images/计算机设计竞赛.png)
 ![校励志](../images/励志.png)
 ![国励志](../images/国励.png)
 ![五好学生](../images/五好.png)
