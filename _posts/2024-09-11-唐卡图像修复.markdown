@@ -14,7 +14,7 @@ author: FTX
 ##### 项目源地址：[https://github.com/futingx/Research-on-Tibetan-Thangka-Image-Restoration.git](https://github.com/futingx/Research-on-Tibetan-Thangka-Image-Restoration.git)
 ##### 目前项目已经在Github开源（包括唐卡图像数据集），如果有需要的可自行下载。如果该项目可以帮助到您，麻烦您给我一个免费的star！！！
 ![图片实例](/images/tangka/tangka01.jpg)
-![图片实例](/images/tangka/tangka02.jpg)
+![图片实例](/images/tangka/tangka02.png)
 
 
 
