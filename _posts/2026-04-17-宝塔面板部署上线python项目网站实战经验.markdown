@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "宝塔面板部署python项目实战"
-categories: 宝塔
-tags:  宝塔
+categories: 宝塔面板+服务器
+tags:  宝塔面板+服务器
 author: FTX
 ---
 
