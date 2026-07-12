@@ -128,9 +128,12 @@ function setContentMaxHeight() {
 //将Content内容转移
 function moveTOC() {
     if (document.querySelector('#markdown-toc') !== null) {
-        var TOCString = document.querySelector('#markdown-toc').innerHTML
+        var tocSource = document.querySelector('#markdown-toc')
         var contentUl = document.querySelector('#content-side')
-        contentUl.insertAdjacentHTML('afterbegin', TOCString) //插入字符串
+
+        // 用节点克隆代替 innerHTML 字符串传递，避免二次解析触发 XSS
+        var imported = document.importNode(tocSource, true)
+        contentUl.insertBefore(imported, contentUl.firstChild)
 
         //添加scroll样式，为了平滑滚动
         //add class "scroll", for smooth scroll
