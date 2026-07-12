@@ -133,6 +133,7 @@ function moveTOC() {
 
         // 用节点克隆代替 innerHTML 字符串传递，避免二次解析触发 XSS
         var imported = document.importNode(tocSource, true)
+        imported.removeAttribute('id')
         contentUl.insertBefore(imported, contentUl.firstChild)
 
         //添加scroll样式，为了平滑滚动
