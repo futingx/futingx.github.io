@@ -64,12 +64,14 @@ layout: default
 
         {% include previousAndNext.html %}
 
+        {% if site.duoshuo_shortname or site.disqus_shortname %}
         <h2 id="comments">Comments</h2>
+        {% endif %}
         {% include comments.html %}
 
 
     </div>
-    <button class="anchor"><i class="fa fa-anchor"></i></button>
+    <button type="button" class="anchor" aria-label="Table of contents"><i class="fa fa-anchor"></i></button>
     <div class="right">
         <div class="wrap">
 
@@ -78,11 +80,7 @@ layout: default
                 <div>
                     Content
                 </div>
-                <ul id="content-side" class="content-ul">
-                    {% if hasSimilar.size > 0 %}
-                    <li><a href="#similar_posts">Similar Posts</a></li>
-                    {% endif %}
-                    <li><a href="#comments">Comments</a></li>
+                <ul id="content-side" class="content-ul">{% if hasSimilar.size > 0 %}<li><a href="#similar_posts">Similar Posts</a></li>{% endif %}{% if site.duoshuo_shortname or site.disqus_shortname %}<li><a href="#comments">Comments</a></li>{% endif %}
                 </ul>
             </div>
             <!-- 其他div框放到这里 -->
