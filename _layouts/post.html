@@ -98,6 +98,7 @@ layout: default
     var aTags = document.querySelectorAll('article a:not([id])')
     for (var i = 0; i < aTags.length; i++) {
         aTags[i].setAttribute('target', '_blank')
+        aTags[i].setAttribute('rel', 'noopener noreferrer')
     }
 }());
 </script>
