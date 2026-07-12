@@ -9,12 +9,15 @@ author: 尚硅谷
 * content
 {:toc}
 # AI Coding 零基础实战教程
-
 > 从零开始，用自然语言指挥AI构建真实软件项目
 >
 > 基于 Claude Code 深度实践 | 多模型配置全覆盖 | 国内用户友好
 
 ---
+
+
+
+
 
 ## 目录
 
@@ -30,11 +33,6 @@ author: 尚硅谷
 - [附录](#附录)
 
 ---
-
-
-
-
-
 
 ## 阅读约定
 
@@ -1974,6 +1972,7 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 除了环境变量，还可以在 `settings.json` 的 `env` 块中配置，效果相同但更持久、更清晰：
 
 ```json
+// ~/.claude/settings.json（全局生效）
 {
   "env": {
    "ANTHROPIC_AUTH_TOKEN": "你的API-Key",
@@ -2002,6 +2001,7 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 或使用配置文件（智谱官方推荐方式）：
 
 ```json
+// ~/.claude/settings.json
 {
   "env": {
    "ANTHROPIC_AUTH_TOKEN": "你的智谱Key",
@@ -2015,6 +2015,7 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 另外智谱官方要求在 `~/.claude.json` 中添加（跳过首次启动的引导流程）：
 
 ```json
+// ~/.claude.json
 {
   "hasCompletedOnboarding": true
 }
@@ -2027,6 +2028,7 @@ export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
 GLM-5.1 / GLM-5-Turbo 作为高阶模型，对标 Claude Opus，使用时会按“高峰期 3 倍、非高峰期 2 倍”系数消耗套餐额度（"高峰期"为每日 14:00～18:00 UTC+8）。如需使用，手动覆盖：
 
 ```json
+// ~/.claude/settings.json
 {
   "env": {
    "ANTHROPIC_AUTH_TOKEN": "你的智谱Key",
@@ -2170,6 +2172,7 @@ export CLAUDE_CODE_EFFORT_LEVEL=max
 或使用配置文件（推荐，不需重启终端）：
 
 ```json
+// ~/.claude/settings.json
 {
   "env": {
    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
@@ -2341,6 +2344,7 @@ export ANTHROPIC_MODEL="sonnet"
 在 `settings.json` 中设置 `model` 字段，重启即生效：
 
 ```json
+// ~/.claude/settings.json（全局生效）
 {
   "model": "sonnet"
 }
@@ -2423,6 +2427,7 @@ Claude Code 的配置文件位于 `~/.claude/settings.json`（全局）或项目
 
 ```json
 {
+  // 允许 Claude Code 执行的操作（不再需要每次确认）
   "permissions": {
    "allow": [
      "Read",        // 读取文件
@@ -7190,4 +7195,3 @@ MCP 可以理解为让 Agent 连接外部数据源或工具服务的一种协议
 ---
 
 *本教程中的价格、版本信息已在 2026-05-18 做过一次核对，请以各服务商官网最新信息为准。*
-
