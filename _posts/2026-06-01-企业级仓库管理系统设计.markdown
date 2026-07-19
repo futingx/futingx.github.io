@@ -31,8 +31,8 @@ author: FTX
 
 > 默认账号：`admin` / `admin123`
 
-![本地图片](01.png)
-![本地图片](02.png)
+![本地图片](/images/springboot01.png)
+![本地图片](/images/springboot02.png)
 ---
 
 ## 快速开始
