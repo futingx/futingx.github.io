@@ -12,6 +12,10 @@ author: FTX
 
 本文整理了 codex 记忆系统、内置 git 操作、github + gmail 联动自动化的使用方法，操作均通过提示词完成，使用时注意区分 codex 记忆系统与 claude code。
 
+
+
+
+
 ## Codex记忆系统 AGENTS.md 文件创建
 
 配置文件分两种：项目级和用户级。项目级配置文件放在项目根目录的 AGENTS.md，仅对当前项目生效；用户级配置文件在 C 盘用户目录下的 `.codex` 文件夹里新建 AGENTS.md，对整台机器全局生效。
