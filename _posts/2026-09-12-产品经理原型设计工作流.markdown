@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "产品经理原型设计工作流"
-categories: 产品经理原型设计工作流
-tags: 产品经理原型设计工作流
+title: "产品原型设计工作流"
+categories: 产品原型设计工作流
+tags: 产品原型设计工作流
 author: FTX
 ---
 * content
-  {:toc}
+{:toc}
 
 ## 原型设计步骤
 
