@@ -67,6 +67,16 @@ type: page
 | 52   | allergic             | /əˈlɜːrdʒɪk/        | 过敏的                       |
 | 53   | belittle             | /bɪˈlɪtl/           | 轻视；贬低                   |
 | 54   | twist (原 tuist)     | /twɪst/             | 扭曲；弯曲                   |
+| 55   | inventory            | /ˈɪnvəntɔːri/       | 库存；存货                   |
+| 56   | stock                | /stɑːk/             | 库存；现货；备货             |
+| 57   | request              | /rɪˈkwest/          | 请求；申请                   |
+| 58   | follow               | /ˈfɑːloʊ/           | 跟进；跟踪                   |
+| 59   | direct               | /dəˈrekt/           | 直达的；直接的               |
+| 60   | slow                 | /sloʊ/              | 缓慢的；滞销的               |
+| 61   | land                 | /lænd/              | 到港；落地；到货             |
+| 62   | offland              | /ˈɔːflænd/          | 疑为听错（offload 卸货）     |
+| 63   | offload              | /ˌɔːfˈloʊd/         | 卸货；卸载                   |
+| 64   | access               | /ˈækses/            | 存取；进入；访问权限         |
 
 
 
