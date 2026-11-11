@@ -91,4 +91,19 @@ type: page
 
 
 
+---
+
+## 业务示例：铜矿海运（刚果金 → 赞比亚 → 东非/南非港口 → 中国）
+
+| 英文 | 中文 |
+|---|---|
+| **1. 货物与库存**<br>In our copper business, the main **commodity** we move comes from the **mine** in the DRC. A single **batch** may include **Copper cathode**, **Copper anode**, **Copper concentrate**, **Copper matte**, **Copper blister** and **Copper scrap**. We record each batch in our **inventory** and keep enough **stock** ready, so no **shipment** is delayed by **slow**-moving cargo. | **1. 货物与库存**<br>在我们的铜业务中，我们运输的主要货物来自刚果（金）的矿山。一个批次可能包含阴极铜、阳极铜、铜精矿、冰铜、粗铜和废铜。我们把每一批都记入库存系统，并保留足够的现货，因此任何一票货都不会因为滞销货物而延误。 |
+| **2. 订舱与指示**<br>**As per your request**, we raised a booking **request** to the **carrier**, and the **shipper** prepared the **Shipping Instruction** (SI). Please **advise** us of the **reference number** and follow the **instructions** so we can **compile** the documents. We will **await** your **correspondence** and **find out** the schedule — **hold on** while we **converse** with the **customers**. | **2. 订舱与指示**<br>按你的要求，我们向承运人提出了订舱请求，发货人准备了装运指示（SI）。请告知我们参考号，并遵循这些指示，以便我们汇总单证。我们将等待你的往来函件，查明船期——请稍等，我们正在与客户沟通。 |
+| **3. 陆运到港**<br>To **send** the copper to the port, we **mobilize** **semi trailers** and other **vehicles** by **land transport**. Each **vehicle** is checked by its **chassis number** and **VIN**. The **dispatched** trucks move **direct** to the port, and our team **on site** handles the **external** yard entry. The **haulage rate per load** and the **departure time** are confirmed before the trucks leave the **mine**. | **3. 陆运到港**<br>为了把铜发运到港口，我们调派半挂车和其他车辆进行陆运。每辆车都按底盘号和车辆识别码（VIN）核对。已派发的卡车直达港口，我们的现场团队负责外部堆场的进场。每车拖运费率和发车时间都在卡车驶离矿山前确认。 |
+| **4. 港口与海运**<br>At the **transshipment port** — for example Durban in South Africa, Beira in Mozambique, or Dar es Salaam in Tanzania — we handle the **stuffing** of the containers. After the **container vessel** arrives, the cargo is **landing**; when we **discharge**, we **offload** it. When containers are **unstuffing**, the empty units begin **empty returning**. Unlike a **TRANSBALTIC** route serving Northern Europe, our cargo **transit** south through these ports before it **lands** in China. We check the **availability**, the **intended** vessel, the **expected sailing month** and the **estimated transit time**. | **4. 港口与海运**<br>在转运港——例如南非德班、莫桑比克贝拉或坦桑尼亚达累斯萨拉姆——我们进行装箱。集装箱船抵达后，货物上岸；我们卸船时将其卸载下来。集装箱拆箱后，空箱开始回运。与服务于北欧的波罗的海转运航线不同，我们的货物向南通过这些港口中转，最终落地中国。我们核对了可订舱情况、预定船、预计开航月份和预计中转时间。 |
+| **5. 清关与单据**<br>Before departure, we handle **customs clearance** with the **customs** office. The **manifest** must be **compiled** correctly; if anything changes, we issue an **amended** or **revised** document. The **indicated** fees include the **fumigation fee** and the **e-sealing fee**. Any **alerts** from the system remind us to check the **variance** between actual and declared cargo. | **5. 清关与单据**<br>开航前，我们与海关办理清关手续。舱单必须汇总无误；若有任何变动，我们会签发修正或更新后的单据。标明的费用包括熏蒸费和电子封条费。系统中的任何提醒都会提示我们核查实际货物与申报货物之间的差异。 |
+| **6. 跟踪与汇总**<br>We **follow** each **shipment** closely and stay in touch with the **Delivery ORG** and the person **in charge**. The **cumulative** weight must **remain** within limits, and packing **garbage** must be removed to keep **access** clear. Finally, we **dispatch** the report to our **customers**. | **6. 跟踪与汇总**<br>我们密切跟进每一票货，并与交付机构和负责人保持联系。累计重量必须保持在限额之内，包装产生的垃圾必须清除，以保持通道畅通。最后，我们把报告派发给客户。 |
+
+---
+
 {% include comments.html %}
