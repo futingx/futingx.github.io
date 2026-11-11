@@ -77,6 +77,31 @@ type: page
 | 62   | offland              | /ˈɔːflænd/          | 疑为听错（offload 卸货）     |
 | 63   | offload              | /ˌɔːfˈloʊd/         | 卸货；卸载                   |
 | 64   | access               | /ˈækses/            | 存取；进入；访问权限         |
+| 65   | amended              | /əˈmendɪd/          | 修订的；修正的               |
+| 66   | chassis number       | /ˈʃæsi ˈnʌmbər/     | 底盘号；车架号               |
+| 67   | as per your request  | /æz pɜːr jʊr rɪˈkwest/ | 按你的要求；应你要求        |
+| 68   | indicated            | /ˈɪndɪkeɪtɪd/       | 标明的；注明的               |
+| 69   | VIN                  | /vɪn/               | 车辆识别码（VIN）            |
+| 70   | compiled             | /kəmˈpaɪld/         | 编制；汇编                   |
+| 71   | advise               | /ədˈvaɪz/           | 通知；告知                   |
+| 72   | custom               | /ˈkʌstəm/           | 海关（常作 customs）；定制的 |
+| 73   | alerts               | /əˈlɜːrts/          | 警报；提醒                   |
+| 74   | commodity            | /kəˈmɑːdəti/        | 商品；货物                   |
+| 75   | semi trailers        | /ˈsemi ˈtreɪlərz/   | 半挂车                       |
+| 76   | batch                | /bætʃ/              | 批次；一批                   |
+| 77   | discharge            | /dɪsˈtʃɑːrdʒ/       | 卸货；卸船                   |
+| 78   | stuffing             | /ˈstʌfɪŋ/           | 装箱                         |
+| 79   | unstuffing / Empty returning | /ʌnˈstʌfɪŋ · ˈempti rɪˈtɜːrnɪŋ/ | 拆箱 / 空箱返回 |
+| 80   | garbage              | /ˈɡɑːrbɪdʒ/         | 垃圾；废弃物                 |
+| 81   | Delivery ORG         | /dɪˈlɪvəri ɔːrɡ/    | 交付机构；收货机构           |
+| 82   | instructions         | /ɪnˈstrʌkʃnz/       | 指示；说明                   |
+| 83   | revised              | /rɪˈvaɪzd/          | 修订后的；更新后的           |
+| 84   | concentrate          | /ˈkɑːnsntreɪt/      | 集中；浓缩物                 |
+| 85   | Container vessel     | /kənˈteɪnər ˈvesl/  | 集装箱船                     |
+| 86   | Haulage Rate Per load | /ˈhɔːlɪdʒ reɪt pɜːr loʊd/ | 每车拖运费率；陆运运费  |
+| 87   | Fumigation Fee       | /ˌfjuːmɪˈɡeɪʃn fiː/ | 熏蒸费                       |
+| 88   | E-sealing fee        | /ˈiː siːlɪŋ fiː/    | 电子封条费                   |
+| 89   | Departure time       | /dɪˈpɑːrtʃər taɪm/  | 离港时间；发车时间           |
 
 
 
