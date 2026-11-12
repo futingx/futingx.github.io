@@ -37,17 +37,17 @@ type: page
 | 22  | batch                | /bætʃ/              | 批次；一批                   |
 | 23  | discharge            | /dɪsˈtʃɑːrdʒ/       | 卸货；卸船                   |
 | 24  | stuffing             | /ˈstʌfɪŋ/           | 装箱                         |
-| 25  | unstuffing / Empty returning | /ʌnˈstʌfɪŋ · ˈempti rɪˈtɜːrnɪŋ/ | 拆箱 / 空箱返回 |
+| 25  | unstuffing / empty returning | /ʌnˈstʌfɪŋ · ˈempti rɪˈtɜːrnɪŋ/ | 拆箱 / 空箱返回 |
 | 26  | garbage              | /ˈɡɑːrbɪdʒ/         | 垃圾；废弃物                 |
 | 27  | Delivery ORG         | /dɪˈlɪvəri ɔːrɡ/    | 交付机构；收货机构           |
 | 28  | instructions         | /ɪnˈstrʌkʃnz/       | 指示；说明                   |
 | 29  | revised              | /rɪˈvaɪzd/          | 修订后的；更新后的           |
 | 30  | concentrate          | /ˈkɑːnsntreɪt/      | 精矿；浓缩物                 |
-| 31  | Container vessel     | /kənˈteɪnər ˈvesl/  | 集装箱船                     |
-| 32  | Haulage Rate Per load | /ˈhɔːlɪdʒ reɪt pɜːr loʊd/ | 每车拖运费率；陆运运费  |
-| 33  | Fumigation Fee       | /ˌfjuːmɪˈɡeɪʃn fiː/ | 熏蒸费                       |
-| 34  | E-sealing fee        | /ˈiː siːlɪŋ fiː/    | 电子封条费                   |
-| 35  | Departure time       | /dɪˈpɑːrtʃər taɪm/  | 离港时间；发车时间           |
+| 31  | container vessel     | /kənˈteɪnər ˈvesl/  | 集装箱船                     |
+| 32  | haulage rate per load | /ˈhɔːlɪdʒ reɪt pɜːr loʊd/ | 每车拖运费率；陆运运费  |
+| 33  | fumigation fee       | /ˌfjuːmɪˈɡeɪʃn fiː/ | 熏蒸费                       |
+| 34  | e-sealing fee        | /ˈiː siːlɪŋ fiː/    | 电子封条费                   |
+| 35  | departure time       | /dɪˈpɑːrtʃər taɪm/  | 离港时间；发车时间           |
 | 36  | hold on              | /hoʊld ɑːn/         | 稍等；保持（别挂断）         |
 | 37  | converse             | /kənˈvɜːrs/         | 交谈；沟通                   |
 | 38  | landing              | /ˈlændɪŋ/           | 落地；到港；卸货上岸         |
@@ -57,39 +57,45 @@ type: page
 | 42  | send                 | /send/              | 发送；发运                   |
 | 43  | shipper              | /ˈʃɪpər/            | 发货人；托运人               |
 | 44  | carrier              | /ˈkæriər/           | 承运人；船公司               |
-| 45  | Mobilize             | /ˈmoʊbəlaɪz/        | 调动（资源）；组织           |
+| 45  | mobilize             | /ˈmoʊbəlaɪz/        | 调动（资源）；组织           |
 | 46  | shipment             | /ˈʃɪpmənt/          | 货物；装运；一票货           |
 | 47  | remain               | /rɪˈmeɪn/           | 剩余；保持                   |
 | 48  | mine                 | /maɪn/              | 矿山；矿（矿业货）           |
 | 49  | manifest             | /ˈmænɪfest/         | 舱单；货物清单               |
-| 50  | TRANSHIPMENT PORT    | /trænˈʃɪpmənt pɔːrt/ | 转运港；中转港             |
-| 51  | AVAILABILITY         | /əˌveɪləˈbɪləti/    | 可用性；可订舱情况           |
+| 50  | transshipment port   | /trænˈʃɪpmənt pɔːrt/ | 转运港；中转港             |
+| 51  | availability         | /əˌveɪləˈbɪləti/    | 可用性；可订舱情况           |
 | 52  | intended             | /ɪnˈtendɪd/         | 预期的；计划中的             |
-| 53  | Shipping Instruction | /ˈʃɪpɪŋ ɪnˈstrʌkʃn/ | 装运指示（SI）             |
+| 53  | shipping instruction | /ˈʃɪpɪŋ ɪnˈstrʌkʃn/ | 装运指示（SI）             |
 | 54  | incharge (in charge) | /ɪn tʃɑːrdʒ/        | 负责的；主管                 |
 | 55  | reference number     | /ˈrefrəns ˈnʌmbər/  | 参考号；编号                 |
 | 56  | find out             | /faɪnd aʊt/         | 查明；弄清                   |
 | 57  | await                | /əˈweɪt/            | 等待；等候                   |
 | 58  | correspondence       | /ˌkɔːrəˈspɑːndəns/  | 往来函件；通信               |
-| 59  | TRANSIT              | /ˈtrænzɪt/          | 中转；过境运输               |
-| 60  | Customers            | /ˈkʌstəmərz/        | 客户（复数）                 |
+| 59  | transit              | /ˈtrænzɪt/          | 中转；过境运输               |
+| 60  | customers            | /ˈkʌstəmərz/        | 客户（复数）                 |
 | 61  | dispatch             | /dɪˈspætʃ/          | 派发；发运；调度             |
 | 62  | cumulative           | /ˈkjuːmjəleɪtɪv/    | 累计的；累积的               |
-| 63  | TRANSBALTIC          | /trænzˈbɔːltɪk/     | 波罗的海转运（专名）         |
-| 64  | VARIANCE             | /ˈveriəns/          | 差异；偏差                   |
-| 65  | Expected Sailing Month | /ɪkˈspektɪd ˈseɪlɪŋ mʌnθ/ | 预计开航月份          |
-| 66  | ESTIMATED TRANSIT TIME | /ˈestɪmeɪtɪd ˈtrænzɪt taɪm/ | 预计中转时间（ETT） |
-| 67  | Vehicle              | /ˈviːəkl/           | 车辆；载具；运载工具         |
+| 63  | transbaltic          | /trænzˈbɔːltɪk/     | 波罗的海转运（专名）         |
+| 64  | variance             | /ˈveriəns/          | 差异；偏差                   |
+| 65  | expected sailing month | /ɪkˈspektɪd ˈseɪlɪŋ mʌnθ/ | 预计开航月份          |
+| 66  | estimated transit time | /ˈestɪmeɪtɪd ˈtrænzɪt taɪm/ | 预计中转时间（ETT） |
+| 67  | vehicle              | /ˈviːəkl/           | 车辆；载具；运载工具         |
 | 68  | customs clearance    | /ˈkʌstəmz ˈklɪrəns/ | 清关                         |
-| 69  | Copper anode         | /ˈkɑːpər ˈænoʊd/    | 铜矿-阳极板；阳极铜           |
-| 70  | Copper cathode       | /ˈkɑːpər ˈkæθoʊd/   | 铜矿-阴极铜                   |
-| 71  | Copper concentrate   | /ˈkɑːpər ˈkɑːnsntreɪt/ | 铜矿-铜精矿               |
-| 72  | Copper matte         | /ˈkɑːpər mæt/       | 铜矿-冰铜（铜锍）             |
-| 73  | Copper blister       | /ˈkɑːpər ˈblɪstər/  | 铜矿-铜锭（标准译：粗铜）     |
-| 74  | Copper scrap         | /ˈkɑːpər skræp/     | 铜矿-杂铜；废铜               |
-
-
-
+| 69  | copper anode         | /ˈkɑːpər ˈænoʊd/    | 铜矿-阳极板；阳极铜           |
+| 70  | copper cathode       | /ˈkɑːpər ˈkæθoʊd/   | 铜矿-阴极铜                   |
+| 71  | copper concentrate   | /ˈkɑːpər ˈkɑːnsntreɪt/ | 铜矿-铜精矿               |
+| 72  | copper matte         | /ˈkɑːpər mæt/       | 铜矿-冰铜（铜锍）             |
+| 73  | copper blister       | /ˈkɑːpər ˈblɪstər/  | 铜矿-铜锭（标准译：粗铜）     |
+| 74  | copper scrap         | /ˈkɑːpər skræp/     | 铜矿-杂铜；废铜               |
+| 75  | capacity             | /kəˈpæsəti/         | 舱位；运力；容量             |
+| 76  | loading              | /ˈloʊdɪŋ/           | 装货；装载                   |
+| 77  | not yet              | /nɑːt jet/          | 尚未；还没有                 |
+| 78  | readily available    | /ˈredɪli əˈveɪləbl/ | 现成可得的；随时可用的       |
+| 79  | charge               | /tʃɑːrdʒ/           | 费用；收费；运费             |
+| 80  | currently            | /ˈkɜːrəntli/        | 目前；当前                   |
+| 81  | license              | /ˈlaɪsns/           | 许可证；执照                 |
+| 82  | allocated            | /ˈæləkeɪtɪd/        | 已分配的；已拨给的           |
+| 83  | take time            | /teɪk taɪm/         | 需要时间；耗时               |
 
 ---
 
