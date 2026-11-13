@@ -96,6 +96,14 @@ type: page
 | 81  | license              | /ˈlaɪsns/           | 许可证；执照                 |
 | 82  | allocated            | /ˈæləkeɪtɪd/        | 已分配的；已拨给的           |
 | 83  | take time            | /teɪk taɪm/         | 需要时间；耗时               |
+| 84  | in addition to       | /ɪn əˈdɪʃn tuː/     | 除…之外；此外                |
+| 85  | quota                | /ˈkwoʊtə/           | 配额；限额；舱位配额         |
+| 86  | large-scale mining trucks and excavators | /lɑːrdʒ skeɪl ˈmaɪnɪŋ trʌks ənd ˈekskəveɪtərz/ | 大型矿用卡车和挖掘机 |
+| 87  | provide quotes for each individual piece of equipment | /prəˈvaɪd kwoʊts fɔːr iːtʃ ˌɪndɪˈvɪdʒuəl piːs əv ɪˈkwɪpmənt/ | 为每一台设备单独报价 |
+| 88  | port and miscellaneous charges, and inland transportation costs | /pɔːrt ənd ˌmɪsəˈleɪniəs ˈtʃɑːrdʒɪz ənd ˈɪnlænd ˌtrænspɔːrˈteɪʃn kɔːsts/ | 港口杂费及内陆运输成本 |
+| 89  | dimensions           | /daɪˈmenʃnz/        | 尺寸；长宽高                 |
+| 90  | earliest convenience | /ˈɜːrliəst kənˈviːniəns/ | 尽早；方便时尽快           |
+| 91  | premises             | /ˈpremɪsɪz/         | 场所；场地；经营场所         |
 
 ---
 
