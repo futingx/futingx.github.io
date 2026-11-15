@@ -104,6 +104,11 @@ type: page
 | 89  | dimensions           | /daɪˈmenʃnz/        | 尺寸；长宽高                 |
 | 90  | earliest convenience | /ˈɜːrliəst kənˈviːniəns/ | 尽早；方便时尽快           |
 | 91  | premises             | /ˈpremɪsɪz/         | 场所；场地；经营场所         |
+| 92  | merchant             | /ˈmɜːrtʃənt/        | 货主；商人；贸易商           |
+| 93  | horse registration   | /hɔːrs ˌredʒɪˈstreɪʃn/ | 马匹登记（疑为听错，物流语境少见） |
+| 94  | anymore              | /ˌeniˈmɔːr/         | 再也（不）；不再             |
+| 95  | make sense           | /meɪk sens/         | 有道理；讲得通               |
+| 96  | charge myself        | /tʃɑːrdʒ maɪˈself/  | 由我自己承担费用；自付       |
 
 ---
 
