@@ -109,6 +109,24 @@ type: page
 | 94  | anymore              | /ˌeniˈmɔːr/         | 再也（不）；不再             |
 | 95  | make sense           | /meɪk sens/         | 有道理；讲得通               |
 | 96  | charge myself        | /tʃɑːrdʒ maɪˈself/  | 由我自己承担费用；自付       |
+| 97  | consolidated         | /kənˈsɑːlɪdeɪtɪd/   | 合并的；拼箱的（集拼）       |
+| 98  | overstayed           | /ˌoʊvərˈsteɪd/      | 滞留过久；逾期停留           |
+| 99  | below                | /bɪˈloʊ/            | 在下面；低于；以下           |
+| 100 | inmention            | /ɪn ˈmenʃn/         | 疑为 mention（提及）之误     |
+| 101 | act up               | /ækt ʌp/            | 出毛病；发作；闹脾气         |
+| 102 | revert               | /rɪˈvɜːrt/          | 回复；恢复（revert to 回到） |
+| 103 | telex bill           | /ˈteleks bɪl/       | 电放提单                     |
+| 104 | normal               | /ˈnɔːrml/           | 正常的；常规的               |
+| 105 | region               | /ˈriːdʒən/          | 地区；区域                   |
+| 106 | is equipped with sufficiently large tarpaulins | /ɪz ɪˈkwɪpt wɪð səˈfɪʃntli lɑːrdʒ tɑːrˈpɔːlɪnz/ | 配备有足够大的篷布 |
+| 107 | story                | /ˈstɔːri/           | 层；楼层                     |
+| 108 | merge                | /mɜːrdʒ/            | 合并；融合                   |
+| 109 | abnormal             | /æbˈnɔːrml/         | 异常的                       |
+| 110 | property             | /ˈprɑːpərti/        | 财产；物权；地产             |
+| 111 | dump                 | /dʌmp/              | 倾倒；堆放；卸载             |
+| 112 | stamped              | /stæmpt/            | 盖章的；已盖章               |
+| 113 | combined             | /kəmˈbaɪnd/         | 联合的；合并的               |
+| 114 | honely               | /ˈhoʊnli/           | 疑为拼写错误（honey / honestly） |
 
 ---
 
