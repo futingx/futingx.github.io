@@ -127,6 +127,36 @@ type: page
 | 112 | stamped              | /stæmpt/            | 盖章的；已盖章               |
 | 113 | combined             | /kəmˈbaɪnd/         | 联合的；合并的               |
 | 114 | honely               | /ˈhoʊnli/           | 疑为拼写错误（honey / honestly） |
+| 115 | uplifted             | /ˌʌpˈlɪftɪd/        | 已提货；已提取（集装箱已提走） |
+| 116 | balance remaining    | /ˈbæləns rɪˈmeɪnɪŋ/ | 剩余余额；剩余金额           |
+| 117 | demented             | /dɪˈmentɪd/         | 精神错乱的；发疯的（口语）   |
+| 118 | physically           | /ˈfɪzɪkli/          | 身体上；实际上；物理上       |
+| 119 | is heading to        | /ɪz ˈhedɪŋ tuː/     | 正前往；正在驶向             |
+| 120 | accurate             | /ˈækjərət/          | 准确的                       |
+| 121 | are enroute for      | /ɑːr ɑːn ˈruːt fɔːr/ | 正在途中前往（en route）   |
+| 122 | proceed to           | /prəˈsiːd tuː/      | 前往；继续到；进而           |
+| 123 | ideally              | /aɪˈdiːəli/         | 理想情况下；最好             |
+| 124 | in charge of         | /ɪn tʃɑːrdʒ əv/     | 负责（某事）                 |
+| 125 | performance          | /pərˈfɔːrməns/      | 表现；性能；绩效             |
+| 126 | sorted               | /ˈsɔːrtɪd/          | 已整理；已分类；已解决       |
+| 127 | indeed               | /ɪnˈdiːd/           | 确实；的确                   |
+| 128 | hold trucks          | /hoʊld trʌks/       | 扣留卡车；让卡车等候         |
+| 129 | anyone               | /ˈeniwʌn/           | 任何人                       |
+| 130 | contact              | /ˈkɑːntækt/         | 联系；联系人                 |
+| 131 | scratched            | /skrætʃt/           | 划伤的；刮伤的               |
+| 132 | diff number plates   | /dɪf ˈnʌmbər pleɪts/ | 不同的车牌（diff = different） |
+| 133 | green lit            | /ɡriːn lɪt/         | 放行；亮绿灯（获批放行）     |
+| 134 | reflecting           | /rɪˈflektɪŋ/        | 反映；体现                   |
+| 135 | amounting to         | /əˈmaʊntɪŋ tuː/     | 总计达到；合计为             |
+| 136 | be finalized         | /biː ˈfaɪnəlaɪzd/   | 最终确定；定案               |
+| 137 | close this out       | /kloʊz ðɪs aʊt/     | 收尾；了结此事               |
+| 138 | owing                | /ˈoʊɪŋ/             | 欠款的；应付的（owing to 由于） |
+| 139 | set up               | /set ʌp/            | 建立；安排；设置             |
+| 140 | slight               | /slaɪt/             | 轻微的；少许                 |
+| 141 | fetch                | /fetʃ/              | 取来；去取；接               |
+| 142 | colleagues           | /ˈkɑːliːɡz/         | 同事                         |
+| 143 | undergoing           | /ˌʌndərˈɡoʊɪŋ/      | 正在经历；正在进行中         |
+| 144 | relevant personnel   | /ˈreləvənt ˌpɜːrsəˈnel/ | 相关人员                 |
 
 ---
 
