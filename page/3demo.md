@@ -157,6 +157,30 @@ type: page
 | 142 | colleagues           | /ˈkɑːliːɡz/         | 同事                         |
 | 143 | undergoing           | /ˌʌndərˈɡoʊɪŋ/      | 正在经历；正在进行中         |
 | 144 | relevant personnel   | /ˈreləvənt ˌpɜːrsəˈnel/ | 相关人员                 |
+| 145 | quotation matrix     | /kwoʊˈteɪʃn ˈmeɪtrɪks/ | 报价矩阵；报价表           |
+| 146 | stuff                | /stʌf/              | 货物；装货；装箱             |
+| 147 | demand               | /dɪˈmænd/           | 需求；要求（订舱需求）       |
+| 148 | account              | /əˈkaʊnt/           | 账户；客户；账目             |
+| 149 | off                  | /ɔːf/               | 卸下；离开（offload 简说）   |
+| 150 | attract demurrage charges | /əˈtrækt dɪˈmɜːrɪdʒ ˈtʃɑːrdʒɪz/ | 产生滞箱费/滞期费 |
+| 151 | shots                | /ʃɑːts/             | 快照；照片（疑为听错）       |
+| 152 | regret               | /rɪˈɡret/           | 遗憾；后悔（regret to inform） |
+| 153 | sample               | /ˈsæmpl/            | 样品；样本                   |
+| 154 | reload               | /ˌriːˈloʊd/         | 重新装载；重装               |
+| 155 | as soon              | /æz suːn/           | 尽快（as soon as possible 省略） |
+| 156 | extension            | /ɪkˈstenʃn/         | 延期；展期                   |
+| 157 | extend               | /ɪkˈstend/          | 延长；延期                   |
+| 158 | keep you posted      | /kiːp juː ˈpoʊstɪd/ | 随时通知你；保持联系         |
+| 159 | populating           | /ˈpɑːpjuleɪtɪŋ/     | 填入；填充（数据）           |
+| 160 | commission           | /kəˈmɪʃn/           | 佣金；手续费                 |
+| 161 | unloading            | /ˌʌnˈloʊdɪŋ/        | 卸货；卸载                   |
+| 162 | pick up              | /pɪk ʌp/            | 提货；取件；接               |
+| 163 | disinfect            | /ˌdɪsɪnˈfekt/       | 消毒；杀菌                   |
+| 164 | follow up with       | /ˈfɑːloʊ ʌp wɪð/    | 跟进；接着联系               |
+| 165 | as soon as           | /æz suːn æz/        | 一…就；尽快                  |
+| 166 | location             | /loʊˈkeɪʃn/         | 位置；地点                   |
+| 167 | aware                | /əˈwer/             | 意识到；知道的               |
+| 168 | are supposed to      | /ɑːr səˈpoʊzd tuː/  | 应该；被期望                 |
 
 ---
 
