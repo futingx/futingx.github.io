@@ -181,6 +181,14 @@ type: page
 | 166 | location             | /loʊˈkeɪʃn/         | 位置；地点                   |
 | 167 | aware                | /əˈwer/             | 意识到；知道的               |
 | 168 | are supposed to      | /ɑːr səˈpoʊzd tuː/  | 应该；被期望                 |
+| 169 | issue                | /ˈɪʃuː/             | 签发；发出（如签发提单）；问题 |
+| 170 | match                | /mætʃ/              | 匹配；核对（单据核对）       |
+| 171 | proceeding           | /prəˈsiːdɪŋ/        | 进行中；程序（proceedings 法律程序） |
+| 172 | pre-alert            | /priː əˈlɜːrt/      | 预通知；到货前通知           |
+| 173 | remittance           | /rɪˈmɪtns/          | 汇款；汇款单                 |
+| 174 | stabilized           | /ˈsteɪbəlaɪzd/      | 稳定的；已稳定的             |
+| 175 | submit               | /səbˈmɪt/           | 提交；呈交（提交单证）       |
+| 176 | handed over          | /ˈhændɪd ˈoʊvər/    | 已移交；已交接               |
 
 ---
 
