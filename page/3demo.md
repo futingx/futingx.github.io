@@ -189,6 +189,14 @@ type: page
 | 174 | stabilized           | /ˈsteɪbəlaɪzd/      | 稳定的；已稳定的             |
 | 175 | submit               | /səbˈmɪt/           | 提交；呈交（提交单证）       |
 | 176 | handed over          | /ˈhændɪd ˈoʊvər/    | 已移交；已交接               |
+| 177 | be about to          | /biː əˈbaʊt tuː/    | 即将；正要（船即将开航）     |
+| 178 | it is not necessary to do sth | /ɪt ɪz nɑːt ˈnesəseri tuː duː/ | 没有必要做某事 |
+| 179 | check A against B    | /tʃek eɪ əˈɡenst biː/ | 将 A 与 B 核对（单据核对） |
+| 180 | as to                | /æz tuː/            | 关于；至于                   |
+| 181 | cover for            | /ˈkʌvər fɔːr/       | 顶替；代班                   |
+| 182 | diverted             | /daɪˈvɜːrtɪd/       | 改道；改线（货物转运/改港）  |
+| 183 | redirected           | /ˌriːdəˈrektɪd/     | 改派；改向；重新定向         |
+| 184 | disregard            | /ˌdɪsrɪˈɡɑːrd/      | 忽视；不理会；不予考虑       |
 
 ---
 
